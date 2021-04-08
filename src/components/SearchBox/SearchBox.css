@@ -1,0 +1,27 @@
+.search__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search__input {
+  background-color: #f5f5f6;
+  border: 1px solid #eeeeee;
+  color: #6d6d6d;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 60%;
+}
+.search__input:focus {
+  outline: none;
+}
+.search__icon {
+  background-color: #f5f5f6;
+  color: #6d6d6d;
+  vertical-align: middle;
+  position: relative;
+  left: -25px;
+  cursor: pointer;
+  font-size: 18px;
+}

@@ -1,9 +1,20 @@
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import SideDrawer from "./components/SideDrawer/SideDrawer";
+import Overlay from "./components/Overlay/Overlay";
 
 function App() {
+  const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
+  const drawerToggler = () => {
+    setIsSidedrawerOpen(!isSidedrawerOpen);
+  };
+
   return (
     <div className="App">
-      <h1>Little Tags</h1>
+      <Navbar drawerToggler={drawerToggler} />
+      <SideDrawer drawerToggler={drawerToggler} isOpen={isSidedrawerOpen} />
+      {isSidedrawerOpen ? <Overlay drawerToggler={drawerToggler} /> : null}
     </div>
   );
 }
