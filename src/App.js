@@ -5,6 +5,7 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Overlay from "./components/Overlay/Overlay";
 import Caraousal from "./components/Carousal/Caraousal";
 import Footer from './components/Footer/Footer';
+import Cart from './components/Cart/Cart';
 
 const images =[
   'https://images.unsplash.com/photo-1547409594-d172436140a5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1189&q=80',
@@ -21,7 +22,8 @@ function App() {
   return (
     <div className="App">
       <Navbar drawerToggler={drawerToggler} />
-      <Caraousal images={images} />
+      {/* <Caraousal images={images} /> */}
+      <Cart />
       <Footer />
       {/* <SideDrawer drawerToggler={drawerToggler} isOpen={isSidedrawerOpen} />
       {isSidedrawerOpen ? <Overlay drawerToggler={drawerToggler} /> : null} */}
