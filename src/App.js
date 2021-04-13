@@ -8,6 +8,8 @@ import ItemCard from "./components/ItemCard/ItemCard";
 import ProductListingPage from "./components/ProductListingPage/ProductListingPage";
 import Caraousal from "./components/Carousal/Caraousal";
 import Footer from "./components/Footer/Footer";
+import Product from "./components/Product/Product";
+import Cart from "./components/Cart/Cart";
 
 const images = [
   "https://images.unsplash.com/photo-1547409594-d172436140a5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1189&q=80",
@@ -42,6 +44,12 @@ function App() {
           <Switch>
             <Route path="/category">
               <ProductListingPage />
+            </Route>
+            <Route path="/product">
+              <Product images={images} />
+            </Route>
+            <Route path="/cart">
+              <Cart />
             </Route>
             <Route path="/">
               <Caraousal images={images} />

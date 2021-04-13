@@ -46,7 +46,7 @@ export default function Navbar({ drawerToggler }) {
             <FaHeart />
           </span>
           <span className="user-action__item">
-            <FaShoppingCart />
+          <Link to="/cart"><FaShoppingCart /></Link>
           </span>
           <span className="user-action__item">
             <FaUserAlt />

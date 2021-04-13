@@ -2,12 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ItemCard.css";
 import { FaRupeeSign, FaRegHeart, FaShoppingCart } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 
 export default function ItemCard({ productsData,title }) {
+
+  const history = useHistory();
     
   const items = productsData.map(({ id, title, price, image }) => {
+    const handleCardClick = ()=>{
+      history.push(`product`);
+    }
     return (
-      <div className="card" key={id}>
+      <div className="card" key={id} onClick={handleCardClick}>
         <img src={image} alt="product" />
         <div className="card__product-details">
           <div className="card__product-title">{title}</div>
