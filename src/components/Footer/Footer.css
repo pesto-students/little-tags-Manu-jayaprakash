@@ -1,0 +1,85 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #fae1dd;
+}
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+  padding: 0 50px 0 0;
+}
+.footer-header {
+  font-size: 15px;
+  font-weight: 600;
+}
+.footer ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+}
+.footer li {
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.form-field {
+  padding-top: 10px;
+}
+.form-field input {
+  width: 60%;
+  font-size: 15px;
+  padding: 5px;
+  height: 25px;
+}
+.form-field button {
+  height: 40px;
+  width: 30%;
+  background-color: #fec89a;
+  border: none;
+  border-radius: 2px;
+  font-size: 15px;
+}
+.form-field button:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+}
+.subscribe-line {
+  font-size: 15px;
+}
+.footer a {
+  text-decoration: none;
+}
+.footer a:link,
+.footer a:visited {
+  color: black;
+}
+.footer a:hover {
+  color: #e5989b;
+}
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.payment-methods {
+  display: flex;
+  justify-content: center;
+}
+
+.footer .icon {
+  font-size: 30px;
+  padding: 5px 10px 5px 10px;
+}
+.footer .copy-right {
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+  }
+}
