@@ -7,7 +7,7 @@
 .card__wrapper {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
 }
 .card {
@@ -79,5 +79,8 @@
 @media (max-width: 576px) {
   .card {
     width: 80%;
+  }
+  .card__wrapper {
+    justify-content: center;
   }
 }

@@ -1,0 +1,8 @@
+.product-lists__main {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .product-lists__main {
+    display: block;
+  }
+}

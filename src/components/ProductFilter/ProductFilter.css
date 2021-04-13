@@ -1,0 +1,15 @@
+.product-filter__wrapper {
+  min-width: 270px;
+  background-color: #fff;
+  padding-left: 15px;
+}
+.product-filter__heading {
+  font-size: 18px;
+  font-weight: 500;
+}
+.product-filter__category label,
+.product-filter__category input{
+  cursor: pointer;
+  padding-top: 5px;
+  display: inline-block;
+}

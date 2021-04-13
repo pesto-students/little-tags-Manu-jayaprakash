@@ -17,7 +17,7 @@ export default function SideDrawer({drawerToggler,isOpen}) {
         <li>Women</li>
         <li>Kid</li>
         <li>Jewellery</li>
-        <li>Accessories</li>
+        <li>Electronics</li>
       </ul>
       <ul className="sidedrawer__user-actions">
         <li><FaHeart/> My WishList</li>
