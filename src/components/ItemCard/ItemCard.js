@@ -7,11 +7,10 @@ import { useHistory } from "react-router-dom";
 export default function ItemCard({ productsData,title }) {
 
   const history = useHistory();
-    
-  const items = productsData.map(({ id, title, price, image }) => {
-    const handleCardClick = ()=>{
-      history.push(`product`);
-    }
+  const handleCardClick = ()=>{
+    history.push("product");
+  } 
+  const items = productsData.map(({ id, title, price, image }) => {    
     return (
       <div className="card" key={id} onClick={handleCardClick}>
         <img src={image} alt="product" />
