@@ -4,9 +4,10 @@ import ItemCard from "../ItemCard/ItemCard";
 import ProductFilter from "../ProductFilter/ProductFilter";
 import "./ProductListingPage.css";
 
-export default function ProductListingPage({ location }) {
+export default function ProductListingPage() {
   const [productsData, setProductsData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [radioFilterState, setRadioFilterState] = useState("");
   const { search } = useLocation();
 
   useEffect(() => {
@@ -20,22 +21,32 @@ export default function ProductListingPage({ location }) {
 
   useEffect(() => {
     const params = new URLSearchParams(search);
-    // const searchCategory = params.get("type").replace(/\-/g, " ").split(",");
-    const searchCategory = params.get("type").replace(/\-/g, " ") ;
-    console.log("search category "+searchCategory);
+    const searchCategory = params
+      .get("type")
+      .split(" ")
+      .map((item) => item.replace("-", " "));
     if (productsData.length > 1) {
       const filteredData = productsData.filter(function ({ category }) {
         return searchCategory.includes(category);
       });
 
+      if (radioFilterState === "low") {
+        filteredData.sort(function (x, y) {
+          return x["price"] - y["price"];
+        });
+      } else {
+        filteredData.sort(function (x, y) {
+          return y["price"] - x["price"];
+        });
+      }
       setFilteredData(filteredData);
-      console.log(filteredData);
     }
-  }, [search, productsData]);
+  }, [search, productsData, radioFilterState]);
+
 
   return (
     <div className="product-lists__main">
-      <ProductFilter />
+      <ProductFilter data={filteredData} setRadioFilterState={setRadioFilterState} />
       <ItemCard productsData={filteredData} title="Product Listing" />
     </div>
   );

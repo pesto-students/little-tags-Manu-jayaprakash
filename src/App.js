@@ -25,7 +25,6 @@ function App() {
     fetch("https://fakestoreapi.com/products?limit=6")
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
         setProductsData(json);
       });
   }, []);
@@ -37,9 +36,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+
         <Navbar drawerToggler={drawerToggler} />
         <SideDrawer drawerToggler={drawerToggler} isOpen={isSidedrawerOpen} />
         {isSidedrawerOpen ? <Overlay drawerToggler={drawerToggler} /> : null}
+        
         <div className="main">
           <Switch>
             <Route path="/category">
@@ -58,10 +59,9 @@ function App() {
             </Route>
           </Switch>
         </div>
+        
       </BrowserRouter>
 
-      {/* <SideDrawer drawerToggler={drawerToggler} isOpen={isSidedrawerOpen} />
-      {isSidedrawerOpen ? <Overlay drawerToggler={drawerToggler} /> : null} */}
     </div>
   );
 }
