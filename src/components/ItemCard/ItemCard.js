@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./ItemCard.css";
 import { FaRupeeSign, FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 export default function ItemCard({ productsData,title }) {
 
@@ -35,9 +36,17 @@ export default function ItemCard({ productsData,title }) {
     );
   });
   return (
-    <div>
+    <div className="card__wrapper">
       <p className="card__heading">{title}</p>
-      <div className="card__wrapper">{items}</div>
+      {/*<div className="card__wrapper">{items}</div>
+      {productsData.length ? (
+        <div className="card__wrapper">{items}</div>
+      ) : (
+        <Loader />
+      )}*/}
+      <div className="card__item">{
+        productsData.length ? items : <Loader />
+      }</div>
     </div>
   );
 }

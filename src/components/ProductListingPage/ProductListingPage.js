@@ -40,13 +40,16 @@ export default function ProductListingPage() {
         });
       }
       setFilteredData(filteredData);
+
     }
   }, [search, productsData, radioFilterState]);
 
-
   return (
     <div className="product-lists__main">
-      <ProductFilter data={filteredData} setRadioFilterState={setRadioFilterState} />
+      <ProductFilter
+        data={filteredData}
+        setRadioFilterState={setRadioFilterState}
+      />
       <ItemCard productsData={filteredData} title="Product Listing" />
     </div>
   );
