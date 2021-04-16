@@ -34,19 +34,19 @@ export default function Navbar({
         <div className="navbar__items">
           <ul>
             <li>
-              <Link to={`${routes.CATEGORY}?type=men-clothing`}>Men</Link>
+              <Link to="/category?type=men-clothing">Men</Link>
             </li>
             <li>
-              <Link to={`${routes.CATEGORY}?type=women-clothing`}>Women</Link>
+              <Link to="/category?type=women-clothing">Women</Link>
             </li>
             <li>
-              <Link to={`${routes.CATEGORY}?type=kids`}>Kid</Link>
+              <Link to="/category?type=kids">Kid</Link>
             </li>
             <li>
-              <Link to={`${routes.CATEGORY}?type=jewelery`}>Jewellery</Link>
+              <Link to="/category?type=jewelery">Jewellery</Link>
             </li>
             <li>
-              <Link to={`${routes.CATEGORY}?type=electronics`}>
+              <Link to="/category?type=electronics">
                 Electronics
               </Link>
             </li>
