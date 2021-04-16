@@ -1,0 +1,38 @@
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.categories-images {
+  width: 50%;
+  position: relative;
+}
+.categories-images img {
+  margin: 5px;
+  width: 98%;
+  height: 400px;
+}
+.shop-now {
+  position: absolute;
+  top: 80%;
+  right: 40%;
+  background-color: white;
+  opacity: 0.5;
+  width: 120px;
+  height: 50px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+.shop-now:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+@media (max-width: 576px) {
+  .categories-images {
+    width: 100%;
+  }
+}

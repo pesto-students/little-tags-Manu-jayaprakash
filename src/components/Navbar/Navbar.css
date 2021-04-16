@@ -15,7 +15,7 @@
   padding: 0 1rem;
   height: 100%;
 }
-.navbar__logo a{
+.navbar__logo a {
   color: #000000;
   text-decoration: none;
 }
@@ -44,11 +44,13 @@
 .user-action__item:hover {
   background-color: #f5f5f6;
 }
-.select-language {
+.select-language,
+.user-login {
   display: flex;
   align-items: center;
 }
-.select-language svg {
+.select-language svg,
+.user-login svg {
   margin-right: 5px;
 }
 .hamburger {
@@ -57,7 +59,7 @@
   margin-top: 5px;
   cursor: pointer;
 }
-.navbar__items li a{
+.navbar__items li a {
   text-decoration: none;
   color: #000000;
 }
