@@ -1,0 +1,56 @@
+.profile{
+    margin-top: 20px;
+    padding: 30px;
+}
+.profile-header{
+    font-size: 40px;
+    font-weight: 600;
+}
+.profile-info{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 200px;
+    justify-content: space-between;
+}
+.section-heading{
+    font-size: 20px;
+    font-weight: 600;
+}
+.my-order{
+    display: flex;
+    padding: 5px;
+}
+.my-order img{
+    width: 100px;
+}
+.order-name{
+    margin-left: 10px;
+    font-weight: 600;
+}
+.order-date{
+    font-size: 10px;
+    margin-left: 10px;
+}
+.add-address{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.add-address label{
+    font-size: 20px;
+    font-weight: 600;
+}
+.submit-address{
+    margin-top: 10px;
+    height: 40px;
+    width: 30%;
+    background-color: #fec89a;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+}
+.submit-address:hover{
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+}
+
