@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import SearchBox from "../SearchBox/SearchBox";
-import * as routes from "../../router/routes";
 import {
   FaShoppingCart,
   FaUserAlt,
