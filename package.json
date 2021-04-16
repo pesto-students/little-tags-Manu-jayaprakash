@@ -11,7 +11,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
+    "react-scripts": "^4.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -37,5 +37,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Pesto Tech is proudly launching its own Online Clothing Store named **Little Tags**. You have been awarded with the project and you need to design and develop this project which should meet the requirements mentioned in the MVP below.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pesto-students/little-tags-Manu-jayaprakash.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pesto-students/little-tags-Manu-jayaprakash/issues"
+  },
+  "homepage": "https://github.com/pesto-students/little-tags-Manu-jayaprakash#readme"
 }
