@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import SearchBox from "../SearchBox/SearchBox";
-import * as ROUTES from "../../router/routes";
+import * as routes from "../../router/routes";
 import {
   FaShoppingCart,
   FaUserAlt,
@@ -28,25 +28,25 @@ export default function Navbar({
         </div>
         <div className="navbar__logo">
           <h1>
-            <Link to={ROUTES.LANDING}>Logo</Link>
+            <Link to={routes.LANDING}>Logo</Link>
           </h1>
         </div>
         <div className="navbar__items">
           <ul>
             <li>
-              <Link to={`${ROUTES.CATEGORY}?type=men-clothing`}>Men</Link>
+              <Link to={`${routes.CATEGORY}?type=men-clothing`}>Men</Link>
             </li>
             <li>
-              <Link to={`${ROUTES.CATEGORY}?type=women-clothing`}>Women</Link>
+              <Link to={`${routes.CATEGORY}?type=women-clothing`}>Women</Link>
             </li>
             <li>
-              <Link to={`${ROUTES.CATEGORY}?type=kids`}>Kid</Link>
+              <Link to={`${routes.CATEGORY}?type=kids`}>Kid</Link>
             </li>
             <li>
-              <Link to={`${ROUTES.CATEGORY}?type=jewelery`}>Jewellery</Link>
+              <Link to={`${routes.CATEGORY}?type=jewelery`}>Jewellery</Link>
             </li>
             <li>
-              <Link to={`${ROUTES.CATEGORY}?type=electronics`}>
+              <Link to={`${routes.CATEGORY}?type=electronics`}>
                 Electronics
               </Link>
             </li>

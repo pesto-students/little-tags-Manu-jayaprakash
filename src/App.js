@@ -13,7 +13,7 @@ import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
 import { auth, createUserProfileDocument } from "./firebase/firebase";
-import * as ROUTES from './router/routes';
+import * as routes from './router/routes';
 
 const images = [
   "https://images.unsplash.com/photo-1547409594-d172436140a5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1189&q=80",
@@ -76,16 +76,16 @@ function App() {
 
         <div className="main">
           <Switch>
-            <Route path={ROUTES.CATEGORY}>
+            <Route path={routes.CATEGORY}>
               <ProductListingPage />
             </Route>
-            <Route path={ROUTES.PRODUCT}>
+            <Route path={routes.PRODUCT}>
               <Product images={images} />
             </Route>
-            <Route path={ROUTES.CART}>
+            <Route path={routes.CART}>
               <Cart />
             </Route>
-            <Route path={ROUTES.LANDING}>
+            <Route path={routes.LANDING}>
               <Caraousal images={images} />
               <Categories/>
               <ItemCard productsData={productsData} title="Trending Items" />
