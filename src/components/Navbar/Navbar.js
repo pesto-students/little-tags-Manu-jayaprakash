@@ -27,7 +27,7 @@ export default function Navbar({
         </div>
         <div className="navbar__logo">
           <h1>
-            <Link to={routes.LANDING}>Logo</Link>
+            <Link to="/">Logo</Link>
           </h1>
         </div>
         <div className="navbar__items">
