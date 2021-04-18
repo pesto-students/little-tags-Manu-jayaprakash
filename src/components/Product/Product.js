@@ -50,7 +50,7 @@ function Product({images}) {
                             <button className="buy-now">BUY NOW</button>
                         </div>
                     </form>
-                    <div className="description-header">Description{'          |          '} <a href="#" className="size-guide">Size Guide</a></div>
+                    <div className="description-header">Description{'          |          '} <a href="#/" className="size-guide">Size Guide</a></div>
                     
                     <ul className="descriptions">
                         <li>Grey slim fit Dungarees, clean look with light fade, Waistband with belt loops</li>

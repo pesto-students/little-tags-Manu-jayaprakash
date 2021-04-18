@@ -6,7 +6,7 @@ function CartEntry({image, name, size, price, quantity}) {
         <div className="cart-entry">
             <div className="product">
                 <div className="product-image">
-                    <img src={image} className="cart-image"/>
+                    <img src={image} className="cart-image" alt="product"/>
                 </div>
                 <div className="product-description">
                     <div className="product-name">{name}</div>

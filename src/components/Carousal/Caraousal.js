@@ -25,10 +25,10 @@ function Caraousal({images}) {
     }
   };
 
-  const dotClick = (idx) => {
-    console.log(idx);
-    setCurrentIndex(idx);
-  }
+  // const dotClick = (idx) => {
+  //   console.log(idx);
+  //   setCurrentIndex(idx);
+  // }
 
     return (
         <div className="caraousal-container">

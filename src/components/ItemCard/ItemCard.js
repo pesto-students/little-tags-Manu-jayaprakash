@@ -8,12 +8,13 @@ import Loader from "../Loader/Loader";
 export default function ItemCard({ productsData,title }) {
 
   const history = useHistory();
-  const handleCardClick = ()=>{
-    history.push("product");
+
+  const handleCardClick = (id)=>{
+    history.push(`product/${id}`);
   } 
   const items = productsData.map(({ id, title, price, image }) => {    
     return (
-      <div className="card" key={id} onClick={handleCardClick}>
+      <div className="card" key={id} onClick={()=>handleCardClick(id)}>
         <img src={image} alt="product" />
         <div className="card__product-details">
           <div className="card__product-title">{title}</div>

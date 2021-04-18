@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./LoginModal.css";
-import {signInWithGoogle,auth} from '../../firebase/firebase'
+import {signInWithGoogle} from '../../firebase/firebase'
 
 export default function LoginModal() {
 
