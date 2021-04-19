@@ -12,8 +12,8 @@ import Footer from "./components/Footer/Footer";
 import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
-import {images} from './constants/images'
-
+import { images } from "./constants/images";
+import { data } from "./testdata";
 
 function App() {
   const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
@@ -25,6 +25,9 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         setProductsData(json);
+      })
+      .catch((e) => {
+        setProductsData(data);
       });
   }, []);
 
@@ -61,7 +64,7 @@ function App() {
             </Route>
             <Route path="/">
               <Caraousal images={images} />
-              <Categories/>
+              <Categories />
               <ItemCard productsData={productsData} title="Trending Items" />
               <Footer />
             </Route>

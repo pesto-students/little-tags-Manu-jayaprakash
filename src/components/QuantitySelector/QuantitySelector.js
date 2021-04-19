@@ -1,13 +1,22 @@
 import React from 'react';
 import './QuantitySelector.css';
+import {useDispatch } from "react-redux";
+import { setCartItems,removeCartItems } from "../../actions/index";
 
+export default function QuantitySelector({quantity,id}){
+    const dispatch = useDispatch();
 
-export default function QuantitySelector({quantity}){
+    const addQuantityHandler =(id)=>{
+        dispatch(setCartItems({ id }));
+    }
+    const removeQuantityHandler =(id)=>{
+        dispatch(removeCartItems({ id }));
+    }
   return(
       <span className="quantity-modifier">
-      <button>-</button>
+      <button onClick={()=>removeQuantityHandler(id)}>-</button>
       <span className="display-quantity">{quantity}</span>
-      <button>+</button>
+      <button onClick={()=>addQuantityHandler(id)}>+</button>
       </span>
   )
 }
