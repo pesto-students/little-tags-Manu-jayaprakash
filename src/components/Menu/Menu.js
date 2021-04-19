@@ -15,6 +15,7 @@ import {
 export default function Menu({ toggleLoginModal, setIsLoginModal }) {
   const authUser = useSelector((state) => state.authUserState.authUser);
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cartState.totalQuantity);
 
   useEffect(() => {
     auth.onAuthStateChanged(async (userAuth) => {
@@ -34,9 +35,10 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
       <span className="user-action__item">
         <FaHeart />
       </span>
-      <span className="user-action__item">
+      <span className="user-action__item cart-icon">
         <Link to="/cart">
           <FaShoppingCart />
+          <sup>{cartItems}</sup>
         </Link>
       </span>
 

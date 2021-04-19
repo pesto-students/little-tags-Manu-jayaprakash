@@ -11,9 +11,9 @@ const authReducer = (state = initialState, action) => {
     case SET_AUTH_USER:
       return {
           ...state,
-        authUser: action.authUser,
-        authUserMail: action.authUserMail,
-        authUserId: action.authUserId,
+        authUser: action.payload.displayName,
+        authUserMail: action.payload.email,
+        authUserId: action.payload.uid,
       };
     default:
       return state;

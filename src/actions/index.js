@@ -1,10 +1,15 @@
-import { SET_AUTH_USER } from "./actionTypes";
+import { SET_AUTH_USER, SET_CART_ITEMS } from "./actionTypes";
 
 export const setAuthUser = (authUser) => {
   return {
     type: SET_AUTH_USER,
-    authUser: authUser.displayName,
-    authUserMail: authUser.email,
-    authUserId: authUser.uid,
+    payload:authUser
+  };
+};
+
+export const setCartItems = (cart) => {
+  return {
+    type: SET_CART_ITEMS,
+    payload: cart
   };
 };
