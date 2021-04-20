@@ -20,7 +20,7 @@ export default function ProductFilterCategory() {
   };
   return (
     <div className="product-filter__category">
-      <div className="product-filter__title">categories</div>
+      <div className="product-filter__title">Categories</div>
       <input
         type="checkbox"
         value="men-clothing"

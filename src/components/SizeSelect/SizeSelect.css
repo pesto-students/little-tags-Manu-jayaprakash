@@ -1,0 +1,12 @@
+.size-selector {
+  border: 1px solid #565656;
+  border-radius: 100px;
+  background-color: #fff;
+  padding: 5px 10px;
+  width: 20%;
+  color: #2e2e2e;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 20px 10px 0px;
+}

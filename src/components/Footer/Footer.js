@@ -17,31 +17,31 @@ export default function Footer() {
           <ul className="footer-list">
             <li className="footer-header">Links</li>
             <li>
-              <a href="#">About Us</a>
+              <a href="#/">About Us</a>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+              <a href="#/">Contact Us</a>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <a href="#/">Blog</a>
             </li>
             <li>
-              <a href="#">Size Guide</a>
+              <a href="#/">Size Guide</a>
             </li>
             <li>
-              <a href="#">Place a Return Request</a>
+              <a href="#/">Place a Return Request</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="#/">Privacy Policy</a>
             </li>
             <li>
-              <a href="#">Shipping Policy</a>
+              <a href="#/">Shipping Policy</a>
             </li>
             <li>
-              <a href="#">Refund Policy</a>
+              <a href="#/">Refund Policy</a>
             </li>
             <li>
-              <a href="#">Terms of Service</a>
+              <a href="#/">Terms of Service</a>
             </li>
           </ul>
         </div>
@@ -49,17 +49,17 @@ export default function Footer() {
           <ul className="footer-list">
             <li className="footer-header">Follow Us</li>
             <li>
-              <a href="#">
+              <a href="#/">
                 <FaFacebookSquare /> Faceook
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#/">
                 <FaInstagramSquare /> Instagram
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#/">
                 <FaTwitterSquare /> Twitter
               </a>
             </li>

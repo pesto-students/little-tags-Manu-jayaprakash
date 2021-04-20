@@ -4,17 +4,23 @@ import "./ItemCard.css";
 import { FaRupeeSign, FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import Loader from "../Loader/Loader";
+import {useDispatch } from "react-redux";
+import { setCartItems } from "../../actions/index";
 
-export default function ItemCard({ productsData,title }) {
-
+export default function ItemCard({ productsData, title }) {
   const history = useHistory();
-  const handleCardClick = ()=>{
-    history.push("product");
-  } 
-  const items = productsData.map(({ id, title, price, image }) => {    
+  const dispatch = useDispatch();
+
+  const handleCardClick = (id) => {
+    history.push(`product/${id}`);
+  };
+  const handleCartClick = (id, title, price, image,description) => {
+    dispatch(setCartItems({ id, title, price, image,description }));
+  };
+  const items = productsData.map(({ id, title, price, image,description }) => {
     return (
-      <div className="card" key={id} onClick={handleCardClick}>
-        <img src={image} alt="product" />
+      <div className="card" key={id}>
+        <img src={image} alt="product" onClick={() => handleCardClick(id)} />
         <div className="card__product-details">
           <div className="card__product-title">{title}</div>
           <div className="card__product-more">
@@ -27,8 +33,14 @@ export default function ItemCard({ productsData,title }) {
               </del>
             </div>
             <div className="card__user-actions">
-              <FaRegHeart />
-              <FaShoppingCart />
+              
+              <div
+                className="cart__add-button"
+                onClick={() => handleCartClick(id, title, price, image,description)}
+              >
+                <FaShoppingCart />
+                Add to cart
+              </div>
             </div>
           </div>
         </div>
@@ -38,15 +50,9 @@ export default function ItemCard({ productsData,title }) {
   return (
     <div className="card__wrapper">
       <p className="card__heading">{title}</p>
-      {/*<div className="card__wrapper">{items}</div>
-      {productsData.length ? (
-        <div className="card__wrapper">{items}</div>
-      ) : (
-        <Loader />
-      )}*/}
-      <div className="card__item">{
-        productsData.length ? items : <Loader />
-      }</div>
+      <div className="card__item">
+        {productsData.length ? items : <Loader />}
+      </div>
     </div>
   );
 }
