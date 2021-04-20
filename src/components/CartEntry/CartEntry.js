@@ -1,16 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./CartEntry.css";
 import { FaRupeeSign } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import SizeSelect from "../SizeSelect/SizeSelect";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
-import cartEmpty from "../../images/cart_empty.png";
-import {useHistory} from 'react-router-dom'
+import CartEmpty from "../CartEmpty/CartEmpty";
 
 export default function CartEntry() {
   const cartItems = useSelector((state) => state.cartState.cart);
-  const history = useHistory();
-
 
   const cartItemsRender = cartItems.map(
     ({ id, title, price, image, quantity, description }) => {
@@ -31,32 +28,13 @@ export default function CartEntry() {
           </div>
           <div className="cart-entry__price">
             <FaRupeeSign />
-            {price}
+            {quantity * price}
           </div>
         </div>
       );
     }
   );
-  const noData = () => {
-    return (
-      <div className="cart-empty">
-        <img src={cartEmpty} alt="empty cart" />
-        <div className="cart-empty-text">There is nothing in your cart. Let's add some items.</div>
-        <div className="cart-empty-shop-now" onClick={shopNowHandler}>Shop Now</div>
-      </div>
-    );
-  };
-  const shopNowHandler = ()=>{
-    history.push('/')
-  }
-
   return (
-    <Fragment>
-      {cartItems.length ? (
-        cartItemsRender
-      ) : (
-        noData()
-      )}
-    </Fragment>
+    <div className="cart-entry__wrapper">{cartItems.length ? cartItemsRender : <CartEmpty />}</div>
   );
 }

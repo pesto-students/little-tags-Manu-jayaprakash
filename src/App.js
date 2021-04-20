@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
@@ -13,23 +13,12 @@ import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
 import { images } from "./constants/images";
-import { data } from "./testdata";
+import { shopData } from "./shopData";
 
 function App() {
   const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
-  const [productsData, setProductsData] = useState([]);
+  const [productsData] = useState(shopData);
   const [isLoginModal, setIsLoginModal] = useState(false);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=4")
-      .then((res) => res.json())
-      .then((json) => {
-        setProductsData(json);
-      })
-      .catch((e) => {
-        setProductsData(data);
-      });
-  }, []);
 
   const drawerToggler = () => {
     setIsSidedrawerOpen(!isSidedrawerOpen);
@@ -57,7 +46,7 @@ function App() {
               <ProductListingPage />
             </Route>
             <Route path="/product">
-              <Product images={images} />
+              <Product images={images} productsData={productsData} />
             </Route>
             <Route path="/cart">
               <Cart />
@@ -65,11 +54,15 @@ function App() {
             <Route path="/">
               <Caraousal images={images} />
               <Categories />
-              <ItemCard productsData={productsData} title="Trending Items" />
+              <ItemCard
+                productsData={productsData.slice(0, 4)}
+                title="Trending Items"
+              />
               <Footer />
             </Route>
           </Switch>
         </div>
+        
       </BrowserRouter>
     </div>
   );

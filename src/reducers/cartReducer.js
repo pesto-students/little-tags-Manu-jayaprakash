@@ -37,7 +37,7 @@ const cartItemReducer = (state = initialState, action) => {
         (item) => item.id === action.payload.id
       );
       const quantity = state.cart[index].quantity;
-      if(quantity>1){
+      if (quantity > 1) {
         const updatedCartItems = [...state.cart];
         updatedCartItems[index].quantity = updatedCartItems[index].quantity - 1;
         return {
@@ -45,9 +45,9 @@ const cartItemReducer = (state = initialState, action) => {
           cart: updatedCartItems,
           totalQuantity: state.totalQuantity - 1,
         };
-      }else{
+      } else {
         const updatedCartItems = [...state.cart];
-        updatedCartItems.splice(index,1);
+        updatedCartItems.splice(index, 1);
         return {
           ...state,
           cart: updatedCartItems,
