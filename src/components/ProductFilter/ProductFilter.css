@@ -11,3 +11,7 @@
 .product-filter__sort input {
   cursor: pointer;
 }
+.product-filter__sort-heading{
+  font-size: 20px;
+  font-weight: 600;
+}

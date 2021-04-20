@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
 import './Carousal.css';
+import image1 from '../../images/image1.PNG';
+import image2 from '../../images/image2.PNG';
+import image3 from '../../images/image3.PNG';
+
+const IMAGES = [image2, image3, image1];
 
 function Caraousal({images}) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,7 +46,7 @@ function Caraousal({images}) {
                         <div className={index === currentIndex ? 'slide active' : 'slide'} key={index}>
                             {index === currentIndex && (
                                 <div className="carousal-images">
-                                    <img src={images[index]} alt="Images"></img>
+                                    <img src={IMAGES[index]} alt="Images"></img>
                                 </div>
                             )}
                         </div>

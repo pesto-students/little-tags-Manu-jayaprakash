@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import ItemCard from "../ItemCard/ItemCard";
 import ProductFilter from "../ProductFilter/ProductFilter";
 import "./ProductListingPage.css";
+import {SHOP_DATA} from '../../shopData.js';
 
 export default function ProductListingPage() {
   const [productsData, setProductsData] = useState([]);
@@ -14,8 +15,8 @@ export default function ProductListingPage() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
-        setProductsData(json);
+        console.log(SHOP_DATA);
+        setProductsData(SHOP_DATA);
       });
   }, []);
 

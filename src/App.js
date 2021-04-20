@@ -14,6 +14,7 @@ import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
 import { images } from "./constants/images";
 import { data } from "./testdata";
+import { SHOP_DATA } from "./shopData";
 
 function App() {
   const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
@@ -24,7 +25,7 @@ function App() {
     fetch("https://fakestoreapi.com/products?limit=4")
       .then((res) => res.json())
       .then((json) => {
-        setProductsData(json);
+        setProductsData(SHOP_DATA);
       })
       .catch((e) => {
         setProductsData(data);
@@ -57,7 +58,7 @@ function App() {
               <ProductListingPage />
             </Route>
             <Route path="/product">
-              <Product images={images} />
+              <Product images={images} productsData={productsData}/>
             </Route>
             <Route path="/cart">
               <Cart />
@@ -71,6 +72,7 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

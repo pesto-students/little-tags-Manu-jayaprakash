@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     padding: 0;
+    height: 80vh;
+    margin-bottom: 20px;
 }
 .caraousal {
     display: flex;
@@ -13,16 +15,18 @@
     justify-content: center;
     position: relative;
     width: 100%;
+    height: 100%;
     margin: 10px 0 2px 0;
 }
 .carousal-images {
     width: 100%;
+    height: 100%;
     position: relative;
     transition-duration: 2s ease;
 }
 .carousal-images img {
     width: 100%;
-    height: 300px;
+    height: 100%;
 }
 .right-icon{
     position: absolute;
@@ -66,6 +70,7 @@
     width: 98.5%;
     opacity: 1;
     transition-duration: 1s;
+    height: 100%;
 }
 
 .dot {
