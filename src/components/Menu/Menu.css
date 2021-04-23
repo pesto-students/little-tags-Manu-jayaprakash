@@ -1,13 +1,28 @@
 .user-actions {
   display: flex;
+  justify-content: flex-end;
 }
 .user-action__item {
-  padding: 8px 12px;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  font-size: 12px;
   cursor: pointer;
   border-radius: 50px;
   margin: 0 8px;
 }
+.user-action__item p{
+  margin: 0;
+  padding: 0px 2px;
+}
+.icon{
+  font-size: 20px;
+}
+.icon-tag{
+  font-size: 15px;
+}
+
 .user-action__item a {
   color: #000000;
 }
@@ -24,6 +39,7 @@
   margin-right: 5px;
 }
 .user-action__item.cart-icon {
+  display: flex;
   position: relative;
 }
 .user-action__item.cart-icon sup{

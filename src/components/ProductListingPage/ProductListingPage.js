@@ -15,7 +15,6 @@ export default function ProductListingPage() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => {
-        console.log(SHOP_DATA);
         setProductsData(SHOP_DATA);
       });
   }, []);
@@ -25,10 +24,14 @@ export default function ProductListingPage() {
     const searchCategory = params
       .get("type")
       .split(" ")
-      .map((item) => item.replace("-", " "));
+      .map((item) => item.replace("-", " ")).toString();
     if (productsData.length > 1) {
-      const filteredData = productsData.filter(function ({ category }) {
-        return searchCategory.includes(category);
+      const filteredData = productsData.filter((item) => {
+        const {keywords} = item;
+        console.log(searchCategory);
+        if(keywords.includes(searchCategory)){
+          return item;
+        }
       });
 
       if (radioFilterState === "low") {

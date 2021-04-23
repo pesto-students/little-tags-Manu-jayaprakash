@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 import { auth, createUserProfileDocument } from "../../firebase/firebase";
 import { useSelector, useDispatch } from "react-redux";
 import { setAuthUser } from "../../actions/index";
-import {
-  FaShoppingCart,
-  FaHeart,
-  FaGlobe,
-  FaSignInAlt,
-  FaSignOutAlt,
-} from "react-icons/fa";
+import {AiOutlineShoppingCart} from 'react-icons/ai';
+import{
+  VscHeart
+} from 'react-icons/vsc';
+import {HiOutlineUser} from 'react-icons/hi'
 
 export default function Menu({ toggleLoginModal, setIsLoginModal }) {
   const authUser = useSelector((state) => state.authUserState.authUser);
@@ -32,37 +30,38 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
   }, [authUser]);
   return (
     <div className="user-actions">
-      <span className="user-action__item">
-        <FaHeart />
-      </span>
-      <span className="user-action__item cart-icon">
-        <Link to="/cart">
-          <FaShoppingCart />
-          <sup>{cartItems}</sup>
-        </Link>
-      </span>
-
       {authUser ? (
         <span
           className="user-action__item user-login"
           onClick={() => auth.signOut()}
         >
-          <FaSignOutAlt />
-          LogOut
+          <p className="icon"><HiOutlineUser /></p> 
+          <p className="icon-tag">Sign Out</p>
         </span>
       ) : (
         <span
           className="user-action__item user-login"
           onClick={toggleLoginModal}
         >
-          <FaSignInAlt />
-          Login
+          <p className="icon"><HiOutlineUser /></p> 
+          <p className="icon-tag">Sign In</p>
         </span>
       )}
-
-      <span className="user-action__item select-language">
-        <FaGlobe /> English
+      <span className="user-action__item">
+        <p className="icon"><VscHeart /></p> 
+        <p className="icon-tag">Favourites</p>
       </span>
+      <Link to="/cart">
+        <span className="user-action__item cart-icon">
+          <p className="icon"><AiOutlineShoppingCart /></p> 
+          <p className="icon-tag">{`Shopping Bag (${cartItems})`}</p>
+        </span>
+      </Link>
+
+
+      {/* <span className="user-action__item select-language">
+        <FaGlobe /> English
+      </span> */}
     </div>
   );
 }

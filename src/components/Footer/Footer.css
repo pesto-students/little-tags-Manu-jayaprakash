@@ -1,22 +1,29 @@
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: #fae1dd;
+  background-color: #002060;
+  color: #fec89a;
+  margin-top: 100px;
 }
 .footer-links {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  
 }
 .footer-column {
   display: flex;
   flex-direction: column;
   width: 33.33%;
   padding: 0 50px 0 0;
+  
 }
 .footer-header {
   font-size: 15px;
   font-weight: 600;
+}
+.footer-header li a{
+  
 }
 .footer ul {
   list-style-type: none;
@@ -27,6 +34,7 @@
   padding: 5px;
   font-size: 12px;
   font-weight: 500;
+  
 }
 .form-field {
   padding-top: 10px;
@@ -53,10 +61,11 @@
 }
 .footer a {
   text-decoration: none;
+  color: white;
 }
 .footer a:link,
 .footer a:visited {
-  color: black;
+  color: white;
 }
 .footer a:hover {
   color: #e5989b;

@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
 import './Carousal.css';
-import image1 from '../../images/image1.PNG';
-import image2 from '../../images/image2.PNG';
-import image3 from '../../images/image3.PNG';
 
-const IMAGES = [image2, image3, image1];
+const IMAGES = [
+  'https://images.unsplash.com/photo-1576082866986-460d8f2ae4fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1800&q=80',
+  'https://images.unsplash.com/photo-1498032087969-fd7d126f9d0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
+  'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+  'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80',
+  'https://images.unsplash.com/photo-1535954769838-a1a5b3bfdd44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+];
 
 function Caraousal({images}) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,6 +41,7 @@ function Caraousal({images}) {
     return (
         <div className="caraousal-container">
             <div className="caraousal">
+                <div className='shop-now'>Shop Now</div>
                 <span className="left-icon" onClick={prevSlide}>
                     <RiArrowDropLeftLine size={80} />
                 </span>

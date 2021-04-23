@@ -1,31 +1,44 @@
+.catogories-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+.categories-title{
+  font-size: 19px;
+  margin-bottom: 0px;
+  margin-left: 25px;
+  font-weight: 500;
+}
 .categories {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 0px 10px;
+  margin-top: 30px;
 }
 .categories-images {
-  width: 50%;
+  width: 25%;
   position: relative;
+  border-radius: 50%;
 }
 .categories-images img {
   margin: 5px;
   width: 98%;
-  height: 400px;
+  height: 200px;
+  border-radius: 50%;
 }
 .shop-now {
   position: absolute;
-  top: 80%;
-  right: 40%;
+  top: 40%;
+  right: 25%;
   background-color: white;
   opacity: 0.5;
   width: 120px;
   height: 50px;
-  font-size: 25px;
+  font-size: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3px;
 }
 .shop-now:hover {
   cursor: pointer;

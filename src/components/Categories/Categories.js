@@ -12,14 +12,13 @@ const categoriesImages = [
   {
     id: "2",
     title: "Men",
-    imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+    imageUrl: "https://images.unsplash.com/photo-1566133919355-d72f16e0d1b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fG1lbiUyMGZhc2hpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
     category: "men-clothing",
   },
   {
     id: "3",
     title: "Jwellery",
-    imageUrl:
-      "https://images.unsplash.com/photo-1559560864-854edd2b01e1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     category: "jewelery",
   },
   {
@@ -41,7 +40,7 @@ function Categories() {
   const categories = categoriesImages.map((item) => {
     return (
       <div className="categories-images" key={item.id}>
-        <img src={item.imageUrl} alt="category" />
+          <img src={item.imageUrl} alt="category" />
         <div
           className="shop-now"
           onClick={() => handleCardClick(item.category)}
@@ -52,8 +51,11 @@ function Categories() {
     );
   });
   return (
-    <div className="categories">
-      {categories}
+    <div className='catogories-container'>
+      <div className='categories-title'>Shop By Category</div>
+      <div className="categories">
+        {categories}
+      </div>
     </div>
   );
 }
