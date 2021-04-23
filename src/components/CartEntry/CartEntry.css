@@ -7,6 +7,9 @@
   justify-content: space-evenly;
   border-radius: 10px;
 }
+.cart-entry__image {
+  cursor: pointer;
+}
 .cart-entry__image img {
   width: 100px;
 }

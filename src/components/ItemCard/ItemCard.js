@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./ItemCard.css";
-import { FaRupeeSign, FaRegHeart, FaShoppingCart } from "react-icons/fa";
+import { FaRupeeSign, FaShoppingCart } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import {useDispatch } from "react-redux";

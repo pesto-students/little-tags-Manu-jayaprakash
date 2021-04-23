@@ -1,0 +1,17 @@
+.payment__wrapper {
+  width: 50%;
+  padding: 20px;
+  float: left;
+}
+.pay-now__btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #fc5c9c;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  padding: 10px 30px;
+  margin-top: 20px;
+  font-size: 16px;
+}

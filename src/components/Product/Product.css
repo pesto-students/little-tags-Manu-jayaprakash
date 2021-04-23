@@ -36,8 +36,7 @@
 .product-buttons {
   padding: 50px 0px;
   display: flex;
-  flex-direction: column;
-  width: 50%;
+  justify-content: space-between;
 }
 .add-to-cart {
   margin-bottom: 20px;
@@ -46,6 +45,7 @@
   font-weight: 600;
   background-color: white;
   border: 2px solid black;
+  width: 49%;
 }
 .buy-now {
   margin-bottom: 20px;
@@ -56,6 +56,7 @@
   background-color: black;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
   border: none;
+  width: 49%;
 }
 .add-to-cart:hover {
   cursor: pointer;
@@ -91,6 +92,13 @@
   font-weight: 600;
   margin-bottom: 10px;
 }
+.product-size-quanity__wrapper{
+  margin-top: 10px;
+}
+.product-size,
+.product-quantity{
+  margin-right: 10px;
+}
 
 @media (max-width: 576px) {
   .product-page {
@@ -109,12 +117,13 @@
     width: 100%;
   }
   .image-container img {
-    width: 100%;
+    height: auto;
   }
   .product-details-container {
-    width: 100%;
+    width: 95%;
+    padding: 0 10px 0 10px;
   }
   .product-buttons {
-    width: 100%;
+    width: 95%;
   }
 }

@@ -1,0 +1,9 @@
+.address-summary__wrapper {
+  padding-left: 20px;
+  display: table;
+}
+.address-summary__change-address {
+  float: right;
+  cursor: pointer;
+  color: #fc5c9c;
+}

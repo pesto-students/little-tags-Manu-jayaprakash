@@ -12,12 +12,13 @@ import Footer from "./components/Footer/Footer";
 import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
+import Checkout from './components/Checkout/Checkout'
 import { images } from "./constants/images";
 import { shopData } from "./shopData";
 
 function App() {
   const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
-  const [productsData] = useState(shopData);
+  const [productsData,setProductData] = useState(shopData);
   const [isLoginModal, setIsLoginModal] = useState(false);
 
   const drawerToggler = () => {
@@ -50,6 +51,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
             </Route>
             <Route path="/">
               <Caraousal images={images} />
