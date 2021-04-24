@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Overlay from "./components/Overlay/Overlay";
-import Categories from "./components/Categories/Categories";
-import ItemCard from "./components/ItemCard/ItemCard";
 import ProductListingPage from "./components/ProductListingPage/ProductListingPage";
-import Caraousal from "./components/Carousal/Caraousal";
 import Footer from "./components/Footer/Footer";
 import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
+import Checkout from "./components/Checkout/Checkout";
+import Header from "./components/Header/Header";
+import HomePage from "./components/HomePage/HomePage";
 import { images } from "./constants/images";
 import { shopData } from "./shopData";
 
 function App() {
   const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
-  const [productsData] = useState(shopData);
+  const [productsData, setProductData] = useState(shopData);
   const [isLoginModal, setIsLoginModal] = useState(false);
 
   const drawerToggler = () => {
@@ -30,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar
+        <Header
           drawerToggler={drawerToggler}
           toggleLoginModal={toggleLoginModal}
           setIsLoginModal={setIsLoginModal}
@@ -51,18 +50,19 @@ function App() {
             <Route path="/cart">
               <Cart />
             </Route>
+            <Route path="/checkout">
+              <Checkout />
+            </Route>
             <Route path="/">
-              <Caraousal images={images} />
-              <Categories />
-              <ItemCard
-                productsData={productsData.slice(0, 4)}
+              <HomePage
+                images={images}
+                productsData={productsData.slice(1, 4)}
                 title="Trending Items"
               />
-              <Footer />
             </Route>
           </Switch>
+          <Footer />
         </div>
-        
       </BrowserRouter>
     </div>
   );

@@ -1,0 +1,11 @@
+.payment__options input,
+.payment__options label {
+  cursor: pointer;
+}
+.payment__options input.disabled,
+.payment__options label.disabled {
+  cursor: not-allowed;
+}
+.payment__options-item {
+  margin: 10px 0px;
+}

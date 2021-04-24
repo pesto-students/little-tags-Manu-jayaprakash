@@ -1,0 +1,9 @@
+.checkout__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+.checkout-left__wrapper {
+  width: 50%;
+  padding: 20px;
+  float: left;
+}

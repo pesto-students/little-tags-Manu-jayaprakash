@@ -1,0 +1,45 @@
+.global-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px 0px;
+  text-shadow: 0.3px 0.3px grey;
+}
+.global-logo {
+  width: 150px;
+  position: absolute;
+  left: 45%;
+  top: 15%;
+}
+.global-menu ul {
+  display: flex;
+  list-style: none;
+  margin-top: 70px;
+}
+.global-menu ul li {
+  margin: 0 50px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.global-menu ul li:hover {
+  text-decoration: underline;
+  text-decoration-color: #767171;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0;
+}
+.global-bar {
+  /* background-color: #fae1dd; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.search-box {
+  width: 400px;
+}
+.global-menu a {
+  text-decoration: none;
+  color: black;
+}

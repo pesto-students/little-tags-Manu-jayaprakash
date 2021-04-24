@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./ItemCard.css";
-import { FaRupeeSign, FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import {useDispatch } from "react-redux";
 import { setCartItems } from "../../actions/index";
+import {AiOutlineShoppingCart} from 'react-icons/ai';
+import{
+  VscHeart
+} from 'react-icons/vsc';
 
 export default function ItemCard({ productsData, title }) {
   const history = useHistory();
@@ -25,21 +28,23 @@ export default function ItemCard({ productsData, title }) {
           <div className="card__product-title">{title}</div>
           <div className="card__product-more">
             <div className="card__product-price">
-              <FaRupeeSign />
-              {price}
+              {`Rs. ${price}`}
               <del className="card__product-price-striked">
-                <FaRupeeSign />
                 {(Math.random() * 100 + price).toFixed(2)}
               </del>
             </div>
             <div className="card__user-actions">
-              
+            <div
+                className="cart__add-button"
+                // onClick={() => handleCartClick(id, title, price, image,description)}
+              >
+                <VscHeart />
+              </div>              
               <div
                 className="cart__add-button"
                 onClick={() => handleCartClick(id, title, price, image,description)}
               >
-                <FaShoppingCart />
-                Add to cart
+                <AiOutlineShoppingCart />
               </div>
             </div>
           </div>

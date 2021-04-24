@@ -12,6 +12,7 @@ export default function ProductListingPage() {
   const { search } = useLocation();
   
   useEffect(() => {
+    window.scrollTo(0, 0);
     const params = new URLSearchParams(search);
     const searchCategory = params
       .get("type")
