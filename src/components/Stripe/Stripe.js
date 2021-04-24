@@ -9,8 +9,7 @@ export default function Stripe({ price, setIsOrderCompleted }) {
   const key = process.env.REACT_APP_STRIPE;
   const dispatch = useDispatch();
 
-  const onToken = (token) => {
-    console.log(token);
+  const onToken = () => {
     dispatch(deleteCartItems());
     setIsOrderCompleted(true);
   };

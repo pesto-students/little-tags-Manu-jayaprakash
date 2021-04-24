@@ -19,7 +19,7 @@ function Product({ productsData }) {
     setQuantityTracker(quantityTracker + 1);
   };
   const removeQuantityHandler = () => {
-    if(quantityTracker<=1) return
+    if (quantityTracker <= 1) return;
     setQuantityTracker(quantityTracker - 1);
   };
 
@@ -34,10 +34,11 @@ function Product({ productsData }) {
       return null;
     });
     setProduct(item[0]);
+    window.scrollTo(0, 0);
   }, []);
 
-  const handleAddToCart = () => {
-    const { id, title, price, image, description, quantity } = product;
+  const addtoCart = () => {
+    const { id, title, price, image, description } = product;
     dispatch(
       setCartItems({
         id,
@@ -45,10 +46,17 @@ function Product({ productsData }) {
         price,
         image,
         description,
-        quantity:quantityTracker,
-        size
+        quantity: quantityTracker,
+        size,
       })
     );
+  };
+  const handleAddToCart = () => {
+    addtoCart();
+  };
+  const handleBuyNow = () => {
+    addtoCart();
+    history.push("/checkout");
   };
 
   let productPage;
@@ -92,7 +100,9 @@ function Product({ productsData }) {
             <button className="add-to-cart" onClick={handleAddToCart}>
               <FaShoppingCart /> ADD TO CART
             </button>
-            <button className="buy-now">BUY NOW</button>
+            <button className="buy-now" onClick={handleBuyNow}>
+              BUY NOW
+            </button>
           </div>
           <div className="product-description-header">Description</div>
           <div className="product-description">{product.description}</div>

@@ -21,6 +21,7 @@ export default function CheckoutOrderSummary({ setGrossAmount }) {
     const grossAmount = (Number(subTotal) + Number(gst) + SHIPPING).toFixed(2);
     setTotal(grossAmount);
     setGrossAmount(grossAmount);
+    // eslint-disable-next-line
   }, [subTotal]);
 
   const items = cartItems.map(({ id, title, price, image, quantity }) => {

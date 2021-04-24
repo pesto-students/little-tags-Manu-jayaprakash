@@ -1,11 +1,13 @@
 .cart-entry__card {
   background-color: #fff;
   max-width: 60%;
+  min-height: 150px;
   margin: 20px auto;
   padding: 20px 10px 10px;
   display: flex;
   justify-content: space-evenly;
   border-radius: 10px;
+  border: 1px solid #e3e3e3;
 }
 .cart-entry__image {
   cursor: pointer;
