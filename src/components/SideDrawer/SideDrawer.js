@@ -4,7 +4,7 @@ import "./SideDrawer.css";
 import { useHistory } from "react-router-dom";
 import {FaWindowClose,FaShoppingCart, FaUserAlt, FaHeart} from "react-icons/fa";
 
-export default function SideDrawer({drawerToggler,isOpen}) {
+export default function SideDrawer({drawerToggler,isOpen,setIsLoginModal}) {
     const history = useHistory();
     let styleClasses = 'sidedrawer__wrapper'
     if(isOpen){
@@ -17,6 +17,10 @@ export default function SideDrawer({drawerToggler,isOpen}) {
     const handleSideDrawerUserActions = (val)=>{
       history.push(`/${val}`)
       drawerToggler();
+    }
+    const handleLoginClick = ()=>{
+      drawerToggler();
+      setIsLoginModal(true);
     }
   return (
     <nav className={styleClasses}>
@@ -32,7 +36,7 @@ export default function SideDrawer({drawerToggler,isOpen}) {
       <ul className="sidedrawer__user-actions">
         <li><FaHeart/> My WishList</li>
         <li onClick={()=>handleSideDrawerUserActions("cart")}><FaShoppingCart/> My Cart</li>
-        <li><FaUserAlt/> Login/SignUp</li>
+        <li onClick={handleLoginClick}><FaUserAlt/> Login/SignUp</li>
       </ul>
     </nav>
   );
