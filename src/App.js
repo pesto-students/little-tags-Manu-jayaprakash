@@ -34,7 +34,11 @@ function App() {
           toggleLoginModal={toggleLoginModal}
           setIsLoginModal={setIsLoginModal}
         />
-        <SideDrawer drawerToggler={drawerToggler} isOpen={isSidedrawerOpen} />
+        <SideDrawer
+          drawerToggler={drawerToggler}
+          isOpen={isSidedrawerOpen}
+          setIsLoginModal={setIsLoginModal}
+        />
         {isSidedrawerOpen ? <Overlay toggler={drawerToggler} /> : null}
         {isLoginModal ? <LoginModal /> : null}
         {isLoginModal ? <Overlay toggler={toggleLoginModal} /> : null}
