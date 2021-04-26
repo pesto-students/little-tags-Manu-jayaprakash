@@ -31,7 +31,6 @@
   text-underline-offset: 0;
 }
 .global-bar {
-  /* background-color: #fae1dd; */
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -42,4 +41,29 @@
 .global-menu a {
   text-decoration: none;
   color: black;
+}
+.hamburder-icon {
+  display: none;
+}
+.hamburder-icon svg {
+  width: 30px;
+  height: 30px;
+}
+.hamburder-icon {
+  position: absolute;
+  left: 10px;
+  top: 70px;
+}
+
+@media (max-width: 576px) {
+  .global-menu,
+  .global-bar .user-actions {
+    display: none;
+  }
+  .global-logo {
+    position: unset;
+  }
+  .hamburder-icon {
+    display: block;
+  }
 }

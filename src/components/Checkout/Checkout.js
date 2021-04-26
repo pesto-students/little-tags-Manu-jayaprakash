@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "./Checkout.css";
 import ShippingAddress from "../ShippingAddress/ShippingAddress";
 import CheckoutOrderSummary from "../CheckoutOrderSummary/CheckoutOrderSummary";
@@ -10,6 +10,10 @@ export default function Checkout() {
   const [isAddress, setIsAddress] = useState(false);
   const [isOrderCompleted, setIsOrderCompleted] = useState(false);
   const [grossAmount, setGrossAmount] = useState(0);
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  })
   return (
     <div className="checkout__wrapper">
       {!isOrderCompleted ? (
@@ -17,7 +21,10 @@ export default function Checkout() {
           {isAddress ? (
             <div className="checkout-left__wrapper">
               <AddressSummary setIsAddress={setIsAddress} />
-              <Payment price={grossAmount} setIsOrderCompleted={setIsOrderCompleted}/>
+              <Payment
+                price={grossAmount}
+                setIsOrderCompleted={setIsOrderCompleted}
+              />
             </div>
           ) : (
             <ShippingAddress setIsAddress={setIsAddress} />

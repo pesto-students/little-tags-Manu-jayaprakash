@@ -1,3 +1,9 @@
-.home-page{
-    padding: 0px 100px;
+.home-page {
+  padding: 0px 100px;
+}
+
+@media (max-width: 576px) {
+  .home-page {
+    padding: 0px;
+  }
 }

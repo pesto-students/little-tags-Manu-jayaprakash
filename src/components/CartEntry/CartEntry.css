@@ -50,3 +50,28 @@
 .cart-entry__wrapper {
   width: 100%;
 }
+
+@media (max-width: 576px) {
+  .cart-entry__wrapper {
+    width: 99%;
+  }
+  .cart-entry__card {
+    padding: 0px;
+    max-width: unset;
+    margin: 20px 5px;
+  }
+  .cartentry__size,
+  .cartentry__quantity {
+    display: block;
+  }
+  .cart-entry__details {
+    padding-left: 5px;
+  }
+  .cart-entry__price {
+    font-size: 16px;
+    min-width: 70px;
+  }
+  .cart-entry__image img {
+    height: 100%;
+  }
+}

@@ -11,3 +11,9 @@
   margin: 10px 20px 10px 0px;
   text-align-last: center;
 }
+
+@media (max-width : 576px){
+  .size-selector {
+    width: unset;
+  }
+}
