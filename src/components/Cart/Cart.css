@@ -3,3 +3,8 @@
   display: flex;
 }
 
+@media (max-width: 576px) {
+  .cart {
+    flex-direction: column;
+  }
+}

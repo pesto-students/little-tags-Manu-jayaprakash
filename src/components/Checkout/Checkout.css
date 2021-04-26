@@ -7,3 +7,12 @@
   padding: 20px;
   float: left;
 }
+
+@media (max-width: 576px) {
+  .checkout__wrapper {
+    flex-direction: column-reverse;
+  }
+  .checkout-left__wrapper {
+    width: unset;
+  }
+}

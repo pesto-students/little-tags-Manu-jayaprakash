@@ -7,3 +7,9 @@
   cursor: pointer;
   color: #fc5c9c;
 }
+
+@media (max-width : 576px) {
+  .address-summary__wrapper {
+    padding-left: 0px;
+  }
+}

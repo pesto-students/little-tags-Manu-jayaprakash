@@ -4,6 +4,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import SearchBox from "../SearchBox/SearchBox";
+import {MdReorder} from 'react-icons/md'
 
 export default function Header({
   drawerToggler,
@@ -21,6 +22,7 @@ export default function Header({
           setIsLoginModal={setIsLoginModal}
         />
       </div>
+      <div className="hamburder-icon" onClick={drawerToggler}><MdReorder/></div>
       <Link to="/">
         <img src={slide1} alt="main-logo" className="global-logo" />
       </Link>

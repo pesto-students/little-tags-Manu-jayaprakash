@@ -15,8 +15,10 @@ export const auth = app.auth();
 export const firestore = app.firestore();
 
 const provider = new app.auth.GoogleAuthProvider();
+const facebookProvider = new app.auth.FacebookAuthProvider();
 
 export const signInWithGoogle = ()=> auth.signInWithPopup(provider);
+export const signInWithFacebook = ()=> auth.signInWithPopup(facebookProvider);
 
 export const createUserProfileDocument = async (userAuth, additionalData)=>{
   if(!userAuth) return;

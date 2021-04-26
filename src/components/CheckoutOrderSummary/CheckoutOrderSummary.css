@@ -52,3 +52,11 @@
   border-bottom: 1px solid #959292;
   padding: 20px 0px;
 }
+@media (max-width: 576px) {
+  .checkout-summary__wrapper {
+    width: unset;
+  }
+  .checkout-summary__item-price {
+    width: 25%;
+  }
+}

@@ -15,3 +15,10 @@
   margin-top: 20px;
   font-size: 16px;
 }
+
+@media (max-width: 576px) {
+  .payment__wrapper {
+    padding: 0px;
+    width: 100%;
+  }
+}

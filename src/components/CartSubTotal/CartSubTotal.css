@@ -23,3 +23,10 @@
   font-weight: 700;
   width: 80%;
 }
+
+@media (max-width: 576px) {
+  .subtotal__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
