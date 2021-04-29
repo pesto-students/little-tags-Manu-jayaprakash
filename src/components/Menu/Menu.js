@@ -1,9 +1,9 @@
 import React, { useEffect, Fragment } from "react";
 import "./Menu.css";
 import { Link } from "react-router-dom";
-import { auth, createUserProfileDocument } from "../../firebase/firebase";
+import { auth, createUserProfileDocument,getCartData } from "../../firebase/firebase";
 import { useSelector, useDispatch } from "react-redux";
-import { setAuthUser } from "../../actions/index";
+import { setAuthUser, setCartItems } from "../../actions/index";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscHeart } from "react-icons/vsc";
 import { HiOutlineUser } from "react-icons/hi";
@@ -20,6 +20,17 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
       if (userAuth) {
         const { uid, displayName, email } = userAuth;
         dispatch(setAuthUser({ displayName, email, uid }));
+
+        const cart = await getCartData(uid);
+        console.log(cart);
+        const { id, title, price, image, description } = cart.items[1];
+        console.log(id)
+        // dispatch(setCartItems());
+        // dispatch(setCartItems({ id, title, price, image, description }));
+        // let data;
+        // updateCart(uid,data={id:123,name:"name",description:"desc",quantity:2})
+
+
         await createUserProfileDocument(userAuth);
       } else {
         dispatch(setAuthUser({ displayName: null, email: null, uid: null }));

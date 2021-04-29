@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./Product.css";
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { setCartItems } from "../../actions/index";
+import { updateCart } from "../../firebase/firebase";
 
 function Product({ productsData }) {
   const [product, setProduct] = useState({});
   const history = useHistory();
   const dispatch = useDispatch();
+  const userId = useSelector((state) => state.authUserState.authUserId);
   const [size, setSize] = useState("l");
   const [quantityTracker, setQuantityTracker] = useState(1);
 
@@ -49,6 +51,10 @@ function Product({ productsData }) {
         quantity: quantityTracker,
         size,
       })
+    );
+    updateCart(
+      userId,
+      { id, title, price, image, description, quantity: quantityTracker,size }
     );
   };
   const handleAddToCart = () => {
