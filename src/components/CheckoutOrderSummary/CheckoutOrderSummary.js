@@ -22,7 +22,7 @@ export default function CheckoutOrderSummary({ setGrossAmount }) {
     setTotal(grossAmount);
     setGrossAmount(grossAmount);
     // eslint-disable-next-line
-  }, [subTotal]);
+  }, [subTotal,cartItems]);
 
   const items = cartItems.map(({ id, title, price, image, quantity }) => {
     return (

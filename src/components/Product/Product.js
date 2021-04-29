@@ -52,10 +52,12 @@ function Product({ productsData }) {
         size,
       })
     );
-    updateCart(
-      userId,
-      { id, title, price, image, description, quantity: quantityTracker,size }
-    );
+    if(userId){
+      updateCart(
+        userId,
+        { id, title, price, image, description, quantity: quantityTracker,size }
+      );
+    }
   };
   const handleAddToCart = () => {
     addtoCart();

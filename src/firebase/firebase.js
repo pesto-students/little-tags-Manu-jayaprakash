@@ -131,6 +131,17 @@ export const reduceCartItemQuantity = async(uid,payload)=>{
   }
 }
 
+export const deleteCartItems = async (uid)=>{
+  const cartRef = firestore.doc(`users/${uid}/cart/data`);
+  try {
+    await cartRef.set({
+      items: [],
+    });
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const getCartData = async (uid) => {
   const cartRef = firestore.doc(`users/${uid}/cart/data`);
   const cartSnapShot = await cartRef.get();

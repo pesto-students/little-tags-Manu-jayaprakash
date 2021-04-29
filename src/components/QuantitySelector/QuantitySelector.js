@@ -2,7 +2,7 @@ import React from 'react';
 import './QuantitySelector.css';
 import {useDispatch, useSelector } from "react-redux";
 import { setCartItems,removeCartItems } from "../../actions/index";
-import { updateCart,addCartItemQuantity,reduceCartItemQuantity } from "../../firebase/firebase";
+import { addCartItemQuantity,reduceCartItemQuantity } from "../../firebase/firebase";
 
 export default function QuantitySelector({quantity,id}){
     const dispatch = useDispatch();
@@ -10,17 +10,23 @@ export default function QuantitySelector({quantity,id}){
 
     const addQuantityHandler =(id)=>{
         dispatch(setCartItems({ id }));
-        addCartItemQuantity(
+        if(userId){
+          addCartItemQuantity(
             userId,
             { id , quantity:quantity+1 }
           );
+        }
+
     }
     const removeQuantityHandler =(id)=>{
         dispatch(removeCartItems({ id }));
-        reduceCartItemQuantity(
+        if(userId){
+          reduceCartItemQuantity(
             userId,
             { id , quantity:quantity-1 }
           );
+        }
+
     }
   return(
       <span className="quantity-modifier">

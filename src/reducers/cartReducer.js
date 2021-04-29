@@ -2,6 +2,7 @@ import {
   SET_CART_ITEMS,
   REMOVE_CART_ITEMS,
   DELETE_CART_ITEMS,
+  INITIALISE_CART_ITEMS
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -63,6 +64,16 @@ const cartItemReducer = (state = initialState, action) => {
       return {
         ...initialState,
       };
+    case INITIALISE_CART_ITEMS:
+      let quanity = 0;
+      for(const item of action.payload) {        
+          quanity+=item.quantity;
+      }
+      return {
+        ...state,
+        cart : action.payload,
+        totalQuantity : quanity         
+    };
     default:
       return state;
   }

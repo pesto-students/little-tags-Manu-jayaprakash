@@ -3,7 +3,7 @@ import "./Menu.css";
 import { Link } from "react-router-dom";
 import { auth, createUserProfileDocument,getCartData } from "../../firebase/firebase";
 import { useSelector, useDispatch } from "react-redux";
-import { setAuthUser, setCartItems } from "../../actions/index";
+import { setAuthUser, deleteCartItems,initialiseCartItems } from "../../actions/index";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscHeart } from "react-icons/vsc";
 import { HiOutlineUser } from "react-icons/hi";
@@ -22,18 +22,12 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
         dispatch(setAuthUser({ displayName, email, uid }));
 
         const cart = await getCartData(uid);
-        console.log(cart);
-        const { id, title, price, image, description } = cart.items[1];
-        console.log(id)
-        // dispatch(setCartItems());
-        // dispatch(setCartItems({ id, title, price, image, description }));
-        // let data;
-        // updateCart(uid,data={id:123,name:"name",description:"desc",quantity:2})
-
+        dispatch(initialiseCartItems(cart.items));
 
         await createUserProfileDocument(userAuth);
       } else {
         dispatch(setAuthUser({ displayName: null, email: null, uid: null }));
+        dispatch(deleteCartItems());
       }
     });
     // eslint-disable-next-line

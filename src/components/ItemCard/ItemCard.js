@@ -19,10 +19,12 @@ export default function ItemCard({ productsData, title }) {
   };
   const handleCartClick = (id, title, price, image, description) => {
     dispatch(setCartItems({ id, title, price, image, description }));
-    updateCart(
-      userId,
-      { id, title, price, image, description, quantity: 1, size:'l' }
-    );
+    if(userId){
+      updateCart(
+        userId,
+        { id, title, price, image, description, quantity: 1, size:'l' }
+      );
+    }
   };
   const items = productsData.map(({ id, title, price, image, description }) => {
     return (

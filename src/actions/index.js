@@ -4,6 +4,7 @@ import {
   REMOVE_CART_ITEMS,
   DELETE_CART_ITEMS,
   SET_USER_ADDRESS,
+  INITIALISE_CART_ITEMS,
 } from "./actionTypes";
 
 export const setAuthUser = (authUser) => {
@@ -16,6 +17,13 @@ export const setAuthUser = (authUser) => {
 export const setCartItems = (cart) => {
   return {
     type: SET_CART_ITEMS,
+    payload: cart,
+  };
+};
+
+export const initialiseCartItems = (cart) => {
+  return {
+    type: INITIALISE_CART_ITEMS,
     payload: cart,
   };
 };
