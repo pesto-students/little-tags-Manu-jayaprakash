@@ -1,12 +1,14 @@
 import React from "react";
 import "./LoginModal.css";
-import {signInWithGoogle} from '../../firebase/firebase'
+import { signInWithGoogle, signInWithFacebook } from "../../firebase/firebase";
 
 export default function LoginModal() {
-
-  const handleGoogleLogin = ()=>{
+  const handleGoogleLogin = () => {
     signInWithGoogle();
-  }
+  };
+  const handleFacebookLogin = () => {
+    signInWithFacebook();
+  };
 
   return (
     <div className="login-modal__wrapper">
@@ -21,6 +23,18 @@ export default function LoginModal() {
           </div>
           <p className="btn-text">
             <b>Sign in with google</b>
+          </p>
+        </div>
+        <div className="facebook-btn" onClick={handleFacebookLogin}>
+          <div className="facebook-icon-wrapper">
+            <img
+              className="facebook-icon"
+              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png"
+              alt="facebook icon"
+            />
+          </div>
+          <p className="btn-text">
+            <b>Sign in with facebook</b>
           </p>
         </div>
       </div>

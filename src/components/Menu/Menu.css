@@ -1,13 +1,29 @@
 .user-actions {
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .user-action__item {
-  padding: 8px 12px;
-  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  font-size: 12px;
   cursor: pointer;
   border-radius: 50px;
   margin: 0 8px;
 }
+.user-action__item p {
+  margin: 0;
+  padding: 0px 2px;
+}
+.icon {
+  font-size: 20px;
+}
+.icon-tag {
+  font-size: 15px;
+}
+
 .user-action__item a {
   color: #000000;
 }
@@ -22,6 +38,35 @@
 .select-language svg,
 .user-login svg {
   margin-right: 5px;
+}
+.user-action__item.cart-icon {
+  display: flex;
+  position: relative;
+}
+.user-action__item.cart-icon sup {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  transform: translateY(-50%) translateX(100%);
+  background-color: #f56c6c;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+.user-actions a {
+  text-decoration: none;
+  color: #000;
+}
+.logged-user {
+  font-size: 16px;
+  margin: 0px;
+  margin-right: 10px;
 }
 
 @media (max-width: 768px) {

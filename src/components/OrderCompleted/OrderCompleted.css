@@ -1,0 +1,22 @@
+.order-completed__wrapper {
+  text-align: center;
+}
+.order-completed__buy-more {
+  background: #fff;
+  color: #ff3f6c;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #ff3f6c;
+  display: inline-block;
+  min-width: 100px;
+  padding: 5px 20px;
+  margin: 10px;
+}
+.order-completed__description {
+  font-size: 20px;
+  margin: 20px 0px;
+}
+.order-completed__image svg {
+  width: 200px;
+  height: 200px;
+}

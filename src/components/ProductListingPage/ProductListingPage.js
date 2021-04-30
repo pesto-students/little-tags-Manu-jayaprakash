@@ -3,23 +3,16 @@ import { useLocation } from "react-router-dom";
 import ItemCard from "../ItemCard/ItemCard";
 import ProductFilter from "../ProductFilter/ProductFilter";
 import "./ProductListingPage.css";
+import {shopData} from '../../shopData.js';
 
 export default function ProductListingPage() {
-  const [productsData, setProductsData] = useState([]);
+  const [productsData] = useState(shopData);
   const [filteredData, setFilteredData] = useState([]);
   const [radioFilterState, setRadioFilterState] = useState("");
   const { search } = useLocation();
-
+  
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        setProductsData(json);
-      });
-  }, []);
-
-  useEffect(() => {
+    window.scrollTo(0, 0);
     const params = new URLSearchParams(search);
     const searchCategory = params
       .get("type")
@@ -50,7 +43,7 @@ export default function ProductListingPage() {
         data={filteredData}
         setRadioFilterState={setRadioFilterState}
       />
-      <ItemCard productsData={filteredData} title="Product Listing" />
+      <ItemCard productsData={filteredData} title="" />
     </div>
   );
 }

@@ -1,32 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Overlay from "./components/Overlay/Overlay";
-import Categories from "./components/Categories/Categories";
-import ItemCard from "./components/ItemCard/ItemCard";
 import ProductListingPage from "./components/ProductListingPage/ProductListingPage";
-import Caraousal from "./components/Carousal/Caraousal";
 import Footer from "./components/Footer/Footer";
 import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
-import {images} from './constants/images'
-
+import Checkout from "./components/Checkout/Checkout";
+import Header from "./components/Header/Header";
+import HomePage from "./components/HomePage/HomePage";
+import { images } from "./constants/images";
+import { shopData } from "./shopData";
 
 function App() {
   const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
-  const [productsData, setProductsData] = useState([]);
+  const [productsData, setProductData] = useState(shopData);
   const [isLoginModal, setIsLoginModal] = useState(false);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=4")
-      .then((res) => res.json())
-      .then((json) => {
-        setProductsData(json);
-      });
-  }, []);
 
   const drawerToggler = () => {
     setIsSidedrawerOpen(!isSidedrawerOpen);
@@ -38,12 +29,16 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar
+        <Header
           drawerToggler={drawerToggler}
           toggleLoginModal={toggleLoginModal}
           setIsLoginModal={setIsLoginModal}
         />
-        <SideDrawer drawerToggler={drawerToggler} isOpen={isSidedrawerOpen} />
+        <SideDrawer
+          drawerToggler={drawerToggler}
+          isOpen={isSidedrawerOpen}
+          setIsLoginModal={setIsLoginModal}
+        />
         {isSidedrawerOpen ? <Overlay toggler={drawerToggler} /> : null}
         {isLoginModal ? <LoginModal /> : null}
         {isLoginModal ? <Overlay toggler={toggleLoginModal} /> : null}
@@ -54,18 +49,23 @@ function App() {
               <ProductListingPage />
             </Route>
             <Route path="/product">
-              <Product images={images} />
+              <Product images={images} productsData={productsData} />
             </Route>
             <Route path="/cart">
               <Cart />
             </Route>
+            <Route path="/checkout">
+              <Checkout />
+            </Route>
             <Route path="/">
-              <Caraousal images={images} />
-              <Categories/>
-              <ItemCard productsData={productsData} title="Trending Items" />
-              <Footer />
+              <HomePage
+                images={images}
+                productsData={productsData.slice(1, 4)}
+                title="Trending Items"
+              />
             </Route>
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     </div>

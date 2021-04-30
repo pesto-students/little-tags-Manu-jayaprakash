@@ -1,29 +1,69 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./SideDrawer.css";
-import {FaWindowClose,FaShoppingCart, FaUserAlt, FaHeart, FaGlobe} from "react-icons/fa";
+import { useHistory } from "react-router-dom";
+import {
+  FaWindowClose,
+  FaShoppingCart,
+  FaUserAlt,
+  FaHeart,
+} from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { auth } from "../../firebase/firebase";
 
-export default function SideDrawer({drawerToggler,isOpen}) {
-    let styleClasses = 'sidedrawer__wrapper'
-    if(isOpen){
-        styleClasses = 'sidedrawer__wrapper open'
-    }
+export default function SideDrawer({ drawerToggler, isOpen, setIsLoginModal }) {
+  const history = useHistory();
+  const user = useSelector((state) => state.authUserState.authUser);
+
+  let styleClasses = "sidedrawer__wrapper";
+  if (isOpen) {
+    styleClasses = "sidedrawer__wrapper open";
+  }
+  const handleSideDrawerItems = (val) => {
+    history.push(`/category?type=${val}`);
+    drawerToggler();
+  };
+  const handleSideDrawerUserActions = (val) => {
+    history.push(`/${val}`);
+    drawerToggler();
+  };
+  const handleLoginClick = () => {
+    drawerToggler();
+    setIsLoginModal(true);
+  };
   return (
     <nav className={styleClasses}>
-    <div className="sidedrawer__close" onClick={drawerToggler}><FaWindowClose/></div>
+      <div className="sidedrawer__close" onClick={drawerToggler}>
+        <FaWindowClose />
+      </div>
+      {user ? <p className="sidedrawer__heading">Hello {user.split(' ')[0]},</p> : null}
+
       <p className="sidedrawer__heading">Categories</p>
       <ul className="sidedrawer__items">
-        <li>Men</li>
-        <li>Women</li>
-        <li>Kid</li>
-        <li>Jewellery</li>
-        <li>Electronics</li>
+        <li onClick={() => handleSideDrawerItems("men-clothing")}>Men</li>
+        <li onClick={() => handleSideDrawerItems("women-clothing")}>Women</li>
+        <li onClick={() => handleSideDrawerItems("kids")}>Kid</li>
+        <li onClick={() => handleSideDrawerItems("jewelery")}>Jewellery</li>
+        <li onClick={() => handleSideDrawerItems("electronics")}>
+          Electronics
+        </li>
       </ul>
       <ul className="sidedrawer__user-actions">
-        <li><FaHeart/> My WishList</li>
-        <li><FaShoppingCart/> My Cart</li>
-        <li><FaUserAlt/> Login/SignUp</li>
-        <li><FaGlobe/> Language</li>
+        <li>
+          <FaHeart /> My WishList
+        </li>
+        <li onClick={() => handleSideDrawerUserActions("cart")}>
+          <FaShoppingCart /> My Cart
+        </li>
+        {user ? (
+          <li onClick={() => auth.signOut()}>
+            <FaUserAlt /> Logout
+          </li>
+        ) : (
+          <li onClick={handleLoginClick}>
+            <FaUserAlt /> Login/SignUp
+          </li>
+        )}
       </ul>
     </nav>
   );
@@ -31,5 +71,5 @@ export default function SideDrawer({drawerToggler,isOpen}) {
 
 SideDrawer.propTypes = {
   drawerToggler: PropTypes.func,
-  isOpen: PropTypes.bool
-}
+  isOpen: PropTypes.bool,
+};

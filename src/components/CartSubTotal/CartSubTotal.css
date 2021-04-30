@@ -1,0 +1,32 @@
+.subtotal__wrapper {
+  min-width: 280px;
+  width: 20%;
+  background-color: #fff;
+  display: table;
+  margin: 20px 20px 0px 0px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  min-height: 120px;
+  border: 1px solid #e3e3e3;
+}
+.subtotal__text {
+  font-size: 18px;
+}
+.subtotal__button {
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: #060606;
+  margin: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 80%;
+}
+
+@media (max-width: 576px) {
+  .subtotal__wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
