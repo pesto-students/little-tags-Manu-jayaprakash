@@ -1,6 +1,7 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import { v4 as uuidv4 } from 'uuid';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -146,6 +147,29 @@ export const getCartData = async (uid) => {
   const cartRef = firestore.doc(`users/${uid}/cart/data`);
   const cartSnapShot = await cartRef.get();
   const data = cartSnapShot.data();
+  return(data)
+};
+
+export const setOrderHistory = async (uid, payload) =>{
+  const orderRef = firestore.doc(`users/${uid}/orderHistory/data`);
+  const orderSnapShot = await orderRef.get();
+  const data = orderSnapShot.data();
+  const id = uuidv4();
+  console.log(payload)
+  try {
+    await orderRef.set({ 
+      ...data,
+      [id]: payload,
+    });
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getorderHistory = async (uid) => {
+  const orderRef = firestore.doc(`users/${uid}/orderHistory/data`);
+  const orderSnapShot = await orderRef.get();
+  const data = orderSnapShot.data();
   return(data)
 };
 
