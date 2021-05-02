@@ -1,5 +1,16 @@
 .home-page {
-  padding: 0px 100px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-container{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 @media (max-width: 576px) {

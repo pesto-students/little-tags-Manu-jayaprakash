@@ -29,9 +29,23 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
   }, [authUser]);
   return (
     <div className="user-actions">
+      <Link to="/cart">
+        <span className="user-action__item cart-icon">
+          <p className="icon">
+            <AiOutlineShoppingCart />
+          </p>
+          <p className="icon-tag">{`Bag(${cartItems})`}</p>
+        </span>
+      </Link>
+      <span className="user-action__item">
+        <p className="icon">
+          <VscHeart />
+        </p>
+        <p className="icon-tag">Favourites</p>
+      </span>
       {authUser ? (
         <Fragment>
-          <p className="logged-user">Hello {user.split(" ")[0]},</p>
+          <p className="logged-user"> {user.split(" ")[0]}</p>
           <span
             className="user-action__item user-login"
             onClick={() => auth.signOut()}
@@ -39,7 +53,7 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
             <p className="icon">
               <HiOutlineUser />
             </p>
-            <p className="icon-tag">Sign Out</p>
+            {/* <p className="icon-tag">Sign Out</p> */}
           </span>
         </Fragment>
       ) : (
@@ -50,24 +64,11 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
           <p className="icon">
             <HiOutlineUser />
           </p>
-          <p className="icon-tag">Sign In</p>
+          <p className="icon-tag">Signin</p>
         </span>
       )}
-      <span className="user-action__item">
-        <p className="icon">
-          <VscHeart />
-        </p>
-        <p className="icon-tag">Favourites</p>
-      </span>
-      <Link to="/cart">
-        <span className="user-action__item cart-icon">
-          <p className="icon">
-            <AiOutlineShoppingCart />
-          </p>
-          <p className="icon-tag">{`Shopping Bag (${cartItems})`}</p>
-        </span>
-      </Link>
-
+      
+    
       {/* <span className="user-action__item select-language">
         <FaGlobe /> English
       </span> */}

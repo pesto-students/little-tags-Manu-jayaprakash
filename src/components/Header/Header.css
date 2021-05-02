@@ -8,10 +8,10 @@
   text-shadow: 0.3px 0.3px grey;
 }
 .global-logo {
-  width: 150px;
+  width: 125px;
   position: absolute;
-  left: 45%;
-  top: 15%;
+  left: 3%;
+  top: 0%;
 }
 .global-menu ul {
   display: flex;

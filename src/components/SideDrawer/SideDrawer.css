@@ -45,9 +45,9 @@
   text-decoration: none;
   color: black;
 }
-
-@media (min-width: 768px) {
-  .sidedrawer__wrapper {
-    display: none;
-  }
+.sidedrawer__items li:hover{
+  background-color: white;
+}
+sidedrawer__user-actions li:hover{
+  background-color: white;
 }
