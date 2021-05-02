@@ -10,6 +10,7 @@ import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
 import Checkout from "./components/Checkout/Checkout";
 import Header from "./components/Header/Header";
+import OrderHistory from "./components/OrderHistory/OrderHistory";
 import HomePage from "./components/HomePage/HomePage";
 import { images } from "./constants/images";
 import { shopData } from "./shopData";
@@ -56,6 +57,9 @@ function App() {
             </Route>
             <Route path="/checkout">
               <Checkout />
+            </Route>
+            <Route path="/order-history">
+              <OrderHistory />
             </Route>
             <Route path="/">
               <HomePage

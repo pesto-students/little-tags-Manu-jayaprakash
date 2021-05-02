@@ -1,7 +1,7 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -25,6 +25,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const cartRef = firestore.doc(`users/${userAuth.uid}/cart/data`);
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
@@ -34,6 +35,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         displayName,
         email,
         ...additionalData,
+      });
+      await cartRef.set({
+        items:[]
       });
     } catch (error) {
       console.log(error);
@@ -48,129 +52,135 @@ export const updateCart = async (uid, cart) => {
   const data = cartSnapShot.data().items;
   // console.log(Object.keys(cartSnapShot.data()).length);
   try {
-    if (!Object.keys(cartSnapShot.data()).length) {  //initial state
+    if (!Object.keys(cartSnapShot.data()).length) {
+      //initial state
       await cartRef.set({
         items: [cart],
       });
-    }else{
+    } else {
       const existing = data.find((item) => item.id === cart.id);
-      if(existing){   // if exists updating the quantity
-        const index = data.findIndex(
-          (item) => item.id === cart.id
-        )
+      if (existing) {
+        // if exists updating the quantity
+        const index = data.findIndex((item) => item.id === cart.id);
         const updatedCartItems = [...data]; //making a new array
-        updatedCartItems[index].quantity = updatedCartItems[index].quantity + cart.quantity;
-        console.log(index)
+        updatedCartItems[index].quantity =
+          updatedCartItems[index].quantity + cart.quantity;
+        console.log(index);
         await cartRef.set({
           items: updatedCartItems,
         });
-      }else{         // if not exists adding item
+      } else {
+        // if not exists adding item
         const newData = data;
-        newData.push(cart)
+        newData.push(cart);
         await cartRef.set({
           items: newData,
         });
-      }      
+      }
     }
   } catch (error) {
     console.log(error);
   }
 };
 
-export const addCartItemQuantity = async(uid,payload)=>{
+export const addCartItemQuantity = async (uid, payload) => {
   const cartRef = firestore.doc(`users/${uid}/cart/data`);
   const cartSnapShot = await cartRef.get();
   const data = cartSnapShot.data().items;
   try {
     const existing = data.find((item) => item.id === payload.id);
-    if(existing){
-      const index = data.findIndex(
-        (item) => item.id === payload.id
-      )
+    if (existing) {
+      const index = data.findIndex((item) => item.id === payload.id);
       const updatedCartItems = [...data]; //making a new array
-      updatedCartItems[index].quantity = payload.quantity ;
+      updatedCartItems[index].quantity = payload.quantity;
       await cartRef.set({
         items: updatedCartItems,
       });
-    }else{
-      console.log("else")
-      return ;
+    } else {
+      console.log("else");
+      return;
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
-export const reduceCartItemQuantity = async(uid,payload)=>{
+};
+export const reduceCartItemQuantity = async (uid, payload) => {
   const cartRef = firestore.doc(`users/${uid}/cart/data`);
   const cartSnapShot = await cartRef.get();
   const data = cartSnapShot.data().items;
   try {
     const existing = data.find((item) => item.id === payload.id);
-    if(existing){
-      const index = data.findIndex(
-        (item) => item.id === payload.id
-      )
+    if (existing) {
+      const index = data.findIndex((item) => item.id === payload.id);
       const updatedCartItems = [...data]; //making a new array
-      if(payload.quantity>=1){
-        updatedCartItems[index].quantity = payload.quantity ;
+      if (payload.quantity >= 1) {
+        updatedCartItems[index].quantity = payload.quantity;
         await cartRef.set({
           items: updatedCartItems,
         });
-      }else{
+      } else {
         updatedCartItems.splice(index, 1);
         await cartRef.set({
           items: updatedCartItems,
         });
       }
-
-    }else{
-      console.log("else")
-      return ;
+    } else {
+      console.log("else");
+      return;
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
-export const deleteCartItems = async (uid)=>{
+export const deleteCartItems = async (uid) => {
   const cartRef = firestore.doc(`users/${uid}/cart/data`);
   try {
     await cartRef.set({
       items: [],
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const getCartData = async (uid) => {
   const cartRef = firestore.doc(`users/${uid}/cart/data`);
   const cartSnapShot = await cartRef.get();
   const data = cartSnapShot.data();
-  return(data)
+  return data;
 };
 
-export const setOrderHistory = async (uid, payload) =>{
+export const setOrderHistory = async (uid, payload) => {
   const orderRef = firestore.doc(`users/${uid}/orderHistory/data`);
   const orderSnapShot = await orderRef.get();
   const data = orderSnapShot.data();
   const id = uuidv4();
-  console.log(payload)
+  console.log(payload);
+  var date = new Date();
+  var dd = String(date.getDate()).padStart(2, "0");
+  var mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var yyyy = date.getFullYear();
+  date = dd + "/" + mm + "/" + yyyy;
+  payload.push(date);
   try {
-    await orderRef.set({ 
+    await orderRef.set({
       ...data,
       [id]: payload,
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const getorderHistory = async (uid) => {
   const orderRef = firestore.doc(`users/${uid}/orderHistory/data`);
   const orderSnapShot = await orderRef.get();
   const data = orderSnapShot.data();
-  return(data)
+  if (data && JSON.stringify(data).length > 2) {
+    return data;
+  }
+  return null;
 };
 
 export default app;
