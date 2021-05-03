@@ -21,7 +21,9 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
         const { uid, displayName, email } = userAuth;
         dispatch(setAuthUser({ displayName, email, uid }));
         const cart = await getCartData(uid);
-        dispatch(initialiseCartItems(cart.items));
+        if(cart){
+          dispatch(initialiseCartItems(cart.items));
+        }
         await createUserProfileDocument(userAuth);
       } else {
         dispatch(setAuthUser({ displayName: null, email: null, uid: null }));
