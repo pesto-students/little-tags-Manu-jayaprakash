@@ -6,6 +6,7 @@ import MenuItem from '../MenuItem/MenuItem';
 import kids from '../../images/kids.jpg';
 import jwellery from '../../images/jwellery.jpg';
 import electronics from '../../images/electronics.jpg';
+import ShopNow from '../ShopNow/ShopNow';
 
 import "./HomePage.css";
 
@@ -48,10 +49,14 @@ function HomePage({ images, productsData, title }) {
   return (
     <div className="home-page">
       <Caraousal images={images} />
-      <div className='menu-container'>
-        {categories.map(({id, ...otherCategoriesprops}) => (
-              <MenuItem key={id} {...otherCategoriesprops}/>
-        ))}
+      <ShopNow />
+      <div className='shop-by-category'>
+        <p className="shop-by-category-tag">Shop By Category</p>
+        <div className='menu-container'>
+          {categories.map(({id, ...otherCategoriesprops}) => (
+            <MenuItem key={id} {...otherCategoriesprops}/>
+          ))}
+        </div>
       </div>
       <ItemCard productsData={productsData} title="Trending Items" /> 
     </div>
