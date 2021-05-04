@@ -26,7 +26,7 @@ export default function Header({
       <Link to="/">
         <img src={slide1} alt="main-logo" className="global-logo" />
       </Link>
-      <div className="global-menu">
+      {/* <div className="global-menu">
         <ul>
           <li>
             <Link to="/category?type=men-clothing">Men</Link>
@@ -35,16 +35,13 @@ export default function Header({
             <Link to="/category?type=women-clothing">Women</Link>
           </li>
           <li>
-            <Link to="/category?type=kids">Kids</Link>
-          </li>
-          <li>
             <Link to="/category?type=jewelery">Jewellery</Link>
           </li>
           <li>
             <Link to="/category?type=electronics">Electronics</Link>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

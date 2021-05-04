@@ -9,7 +9,7 @@ import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
 import LoginModal from "./components/LoginModal/LoginModal";
 import Checkout from "./components/Checkout/Checkout";
-import Header from "./components/Header/Header";
+import Navbar from './components/Navbar/Navbar';
 import OrderHistory from "./components/OrderHistory/OrderHistory";
 import HomePage from "./components/HomePage/HomePage";
 import { images } from "./constants/images";
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header
+        <Navbar
           drawerToggler={drawerToggler}
           toggleLoginModal={toggleLoginModal}
           setIsLoginModal={setIsLoginModal}

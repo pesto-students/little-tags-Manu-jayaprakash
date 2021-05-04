@@ -11,64 +11,68 @@
   min-width: 400px;
   min-height: 400px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.sign-in-options{
+  display: flex;
+  justify-content: space-around;
+}
+.sign-in-form{
+  width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.btn-text {
-  float: right;
-  margin: 11px 11px 0 0;
-  color: white;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  font-family: "Roboto";
+.sign-in-form input{
+  height: 40px;
+  width: 80%;
+  margin: 10px 0px;
+  font-size: 20px;
+  opacity: 0.5;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  background-color: #D3D3D3;
 }
-.google-icon,.facebook-icon {
-  position: absolute;
-  margin-top: 11px;
-  margin-left: 11px;
-  width: 18px;
-  height: 18px;
+.line-divider{
+  width: 99%;
+  border: 2px solid black;
+  opacity: 0.1;
 }
-.google-icon-wrapper,
-.facebook-icon-wrapper {
-  position: absolute;
+.buttons{
+  margin-top: 10px;
+}
+.google-icon {
+  width: 75px;
+  height: 75px;
+}
+.facebook-icon{
+  width: 75px;
+  height: 75px;
+}
+.google-icon-wrapper {
   margin-top: 1px;
   margin-left: 1px;
-  width: 40px;
-  height: 40px;
   border-radius: 2px;
   background-color: white;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
 }
-.facebook-icon-wrapper {
-  background-color: unset;
-  border-right: #364e92 1px solid;
+.facebook-icon-wrapper{
+  margin-top: 1px;
+  margin-left: 1px;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 15%);
+  background-color: white;
 }
 .google-btn {
-  width: 200px;
-  height: 42px;
-  background-color: blue;
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
   cursor: pointer;
   margin-bottom: 20px;
 }
 .facebook-btn {
-  width: 200px;
-  height: 42px;
-  background-color: #4C69BA;
-  background-image: linear-gradient(#4C69BA, #3B55A0);
-  border-radius: 2px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
   cursor: pointer;
+  margin-bottom: 20px;
 }
-.google-btn:hover {
-  box-shadow: 0 0 6px blue;
-}
-.google-btn:active {
-  background: #1669f2;
-}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

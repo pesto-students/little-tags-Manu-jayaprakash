@@ -4,7 +4,7 @@ import { FaRupeeSign } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import SizeSelect from "../SizeSelect/SizeSelect";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
-import CartEmpty from "../CartEmpty/ItemsEmpty";
+import CartEmpty from "../CartEmpty/CartEmpty";
 import {useHistory} from 'react-router-dom'
 
 export default function CartEntry() {

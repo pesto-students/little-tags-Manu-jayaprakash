@@ -1,5 +1,6 @@
 .product-lists__main {
   display: flex;
+  padding-top: 70px;
 }
 @media (max-width: 768px) {
   .product-lists__main {

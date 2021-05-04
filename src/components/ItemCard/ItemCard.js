@@ -2,31 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ItemCard.css";
 import { useHistory } from "react-router-dom";
-import { updateCart } from "../../firebase/firebase";
 import Loader from "../Loader/Loader";
-import { useDispatch, useSelector } from "react-redux";
+import {useDispatch } from "react-redux";
 import { setCartItems } from "../../actions/index";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { VscHeart } from "react-icons/vsc";
+import {AiOutlineShoppingCart} from 'react-icons/ai';
+import{
+  VscHeart
+} from 'react-icons/vsc';
 
 export default function ItemCard({ productsData, title }) {
   const history = useHistory();
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.authUserState.authUserId);
 
   const handleCardClick = (id) => {
     history.push(`product/${id}`);
   };
-  const handleCartClick = (id, title, price, image, description) => {
-    dispatch(setCartItems({ id, title, price, image, description }));
-    if(userId){
-      updateCart(
-        userId,
-        { id, title, price, image, description, quantity: 1, size:'l' }
-      );
-    }
+  const handleCartClick = (id, title, price, image,description) => {
+    dispatch(setCartItems({ id, title, price, image,description }));
   };
-  const items = productsData.map(({ id, title, price, image, description }) => {
+  const items = productsData.map(({ id, title, price, image,description }) => {
     return (
       <div className="card" key={id}>
         <img src={image} alt="product" onClick={() => handleCardClick(id)} />
@@ -40,17 +34,15 @@ export default function ItemCard({ productsData, title }) {
               </del>
             </div>
             <div className="card__user-actions">
-              <div
+            <div
                 className="cart__add-button"
                 // onClick={() => handleCartClick(id, title, price, image,description)}
               >
                 <VscHeart />
-              </div>
+              </div>              
               <div
                 className="cart__add-button"
-                onClick={() =>
-                  handleCartClick(id, title, price, image, description)
-                }
+                onClick={() => handleCartClick(id, title, price, image,description)}
               >
                 <AiOutlineShoppingCart />
               </div>

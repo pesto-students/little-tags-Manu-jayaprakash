@@ -5,6 +5,7 @@ import "./Navbar.css";
 import SearchBox from "../SearchBox/SearchBox";
 import Menu from "../Menu/Menu";
 import { FaWater } from "react-icons/fa";
+import slide1 from "../../images/B&B/Slide1.JPG";
 
 export default function Navbar({
   drawerToggler,
@@ -19,10 +20,10 @@ export default function Navbar({
         </div>
         <div className="navbar__logo">
           <h1>
-            <Link to="/">Logo</Link>
+            <Link to="/">{'B&B'}</Link>
           </h1>
         </div>
-        <div className="navbar__items">
+        {/* <div className="navbar__items">
           <ul>
             <li>
               <Link to="/category?type=men-clothing">Men</Link>
@@ -40,7 +41,7 @@ export default function Navbar({
               <Link to="/category?type=electronics">Electronics</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
         <SearchBox />
         <Menu
           toggleLoginModal={toggleLoginModal}

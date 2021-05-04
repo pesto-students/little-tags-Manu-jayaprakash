@@ -2,17 +2,17 @@ import React from "react";
 import "./Categories.css";
 import { useHistory } from "react-router-dom";
 
-const categoriesImages = [
+const item = [
   {
     id: "1",
     title: "Women",
-    imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+    imageUrl: "https://images.unsplash.com/photo-1551831639-df4be8a9e9ce?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvbWVuJTIwZmFzaGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
     category: "women-clothing",
   },
   {
     id: "2",
     title: "Men",
-    imageUrl: "https://images.unsplash.com/photo-1566133919355-d72f16e0d1b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fG1lbiUyMGZhc2hpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+    imageUrl: "https://images.unsplash.com/photo-1566133919290-919f350c1a75?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fG1lbiUyMGZhc2hpb258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
     category: "men-clothing",
   },
   {
@@ -37,24 +37,35 @@ function Categories() {
     history.push(`/category?type=${value}`);
   };
 
-  const categories = categoriesImages.map((item) => {
-    return (
-      <div className="categories-images" key={item.id}>
-          <img src={item.imageUrl} alt="category" />
-        <div
-          className="shop-now"
-          onClick={() => handleCardClick(item.category)}
-        >
-          {item.title}
+  return (
+    <div className='categories-container'>
+      <div className='category-first'>
+        <div className='category-first-image'>
+          <img src={item[0].imageUrl} alt="category" />
+          <div
+            className="shop-now"
+            onClick={() => handleCardClick(item[0].category)}
+          >
+          {item[0].title}
+          </div>
         </div>
       </div>
-    );
-  });
-  return (
-    <div className='catogories-container'>
-      <div className='categories-title'>Shop By Category</div>
-      <div className="categories">
-        {categories}
+      <div className='categories-right'>
+        <div className='categories-up'>
+          <div className='category-second'>
+            <div className='category-first-second'>
+              <img src={item[1].imageUrl} alt="category" />
+              <div
+                className="shop-now"
+                onClick={() => handleCardClick(item[1].category)}
+              >
+              {item[1].title}
+              </div>
+            </div>
+          </div>
+          <div className='category-third'>third</div>
+        </div>
+        <div className='category-fourth'>Fourth</div>
       </div>
     </div>
   );

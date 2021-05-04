@@ -1,58 +1,53 @@
-.shop-offer-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
+.watches-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
-.shop-offer-container img {
-  width: 98%;
-  height: 500px;
-  opacity: 0.9;
+.watches-container img{
+    width: 98%;
+    height: 500px;
+    opacity: 0.9;
 }
-.shop-offer-container img:hover {
-  opacity: 1;
+.watches-container img:hover{
+    opacity: 1;
 }
-.shop-offer {
-  background-color: black;
-  opacity: 0.5;
-  color: white;
-  position: absolute;
-  height: 100%;
-  right: 1%;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.watch-offer{
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    position: absolute;
+    height: 100%;
+    right: 1%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.shop-offer:hover {
-  opacity: 0.7;
+.watch-offer:hover{
+    opacity: 0.7;
 }
-.offer-tag {
-  font-size: 30px;
-  font-weight: 800;
-  padding: 10px;
+.watch-tag{
+    font-size: 30px;
+    font-weight: 800;
+    padding: 10px;
 }
-.offer-line {
-  font-size: 20px;
-  padding: 10px;
+.watch-line{
+    font-size: 20px;
+    padding: 10px;
 }
-.offer-shop-now {
-  background-color: #e75480;
-  color: black;
-  margin: 15px;
-  padding: 8px;
-  border-radius: 2px;
-  font-size: 25px;
-  font-weight: 600;
-  opacity: 1;
+.watch-shop-now{
+    background-color: #E75480;
+    color: black;
+    margin: 15px;
+    padding: 8px;
+    border-radius: 2px;
+    font-size: 25px;
+    font-weight: 600;
+    opacity: 1;
 }
-.offer-shop-now:hover {
-  cursor: pointer;
-  background-color: #f72585;
+.watch-shop-now:hover{
+    cursor: pointer;
+    background-color: #f72585;
 }
 
-@media (max-width: 576px) {
-  .shop-offer-container img {
-    height: 400px;
-  }
-}

@@ -3,11 +3,9 @@ import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
 import "./Carousal.css";
 
 const IMAGES = [
-  "https://images.unsplash.com/photo-1576082866986-460d8f2ae4fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1800&q=80",
-  "https://images.unsplash.com/photo-1498032087969-fd7d126f9d0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
-  "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-  "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
-  "https://images.unsplash.com/photo-1535954769838-a1a5b3bfdd44?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1490132328392-e6ef54a90dda?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+  "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
 ];
 
 function Caraousal({ images }) {
@@ -33,11 +31,24 @@ function Caraousal({ images }) {
     }
   };
 
+  let offerPercentage;
+  let offerType;
+  if(currentIndex === 0){
+    offerPercentage = 50;
+    offerType = "Women";
+  }else if(currentIndex === 1){
+    offerPercentage = 30;
+    offerType = "Men";
+  }else{
+    offerPercentage = 25;
+    offerType = "Latest";
+  }
+
   return (
     <div className="caraousal-container">
       <div className="caraousal">
         <span className="left-icon" onClick={prevSlide}>
-          <RiArrowDropLeftLine size={80} />
+          <RiArrowDropLeftLine size={80}/>
         </span>
         {images.map((image, index) => {
           return (
@@ -54,13 +65,13 @@ function Caraousal({ images }) {
           );
         })}
         <span className="right-icon" onClick={nextSlide}>
-          <RiArrowDropRightLine size={80} />
+          <RiArrowDropRightLine size={80}/>
         </span>
       </div>
-      <div className="bot-dot">
-        <span className="dot" onClick={() => setCurrentIndex(0)}></span>
-        <span className="dot" onClick={() => setCurrentIndex(1)}></span>
-        <span className="dot" onClick={() => setCurrentIndex(2)}></span>
+      <div className='shop-offer'>
+          <div className='offer-tag'>{`Upto ${offerPercentage}% OFF`}</div>
+          <div className='offer-line'>{`On recent ${offerType}'s Fashion`}</div>
+          <div className='offer-shop-now'>SHOP NOW</div>
       </div>
     </div>
   );
