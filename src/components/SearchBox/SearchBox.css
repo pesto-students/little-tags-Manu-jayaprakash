@@ -1,6 +1,6 @@
 .search__wrapper {
-  width: 50%; 
-  padding: 0 100px 0 200px; 
+  width: 80%; 
+  padding: 0 100px 0 100px; 
   position: relative;
 }
 .search__input {
@@ -18,7 +18,7 @@
 .search__icon {
   vertical-align: middle;
   position: absolute;
-  left: 88%;
+  left: 85%;
   top: 20%;
   cursor: pointer;
   font-size: 15px;

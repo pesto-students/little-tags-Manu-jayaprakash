@@ -1,0 +1,9 @@
+.chat-box{
+    position: fixed;
+    z-index: 500;
+    border-radius: 10px;
+    background-color: black;
+    color: blanchedalmond;
+    top: 0%;
+    right: 0%;
+}

@@ -20,7 +20,7 @@ export default function Navbar({
         </div>
         <div className="navbar__logo">
           <h1>
-            <Link to="/">{'B&B'}</Link>
+            <Link to="/"><img src={slide1} alt='main-logo' /></Link>
           </h1>
         </div>
         {/* <div className="navbar__items">

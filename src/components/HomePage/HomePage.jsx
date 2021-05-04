@@ -7,6 +7,7 @@ import kids from '../../images/kids.jpg';
 import jwellery from '../../images/jwellery.jpg';
 import electronics from '../../images/electronics.jpg';
 import ShopNow from '../ShopNow/ShopNow';
+import ChatBox from "../ChatBox/ChatBox";
 
 import "./HomePage.css";
 

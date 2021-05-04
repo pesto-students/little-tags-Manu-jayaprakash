@@ -14,6 +14,8 @@ import OrderHistory from "./components/OrderHistory/OrderHistory";
 import HomePage from "./components/HomePage/HomePage";
 import { images } from "./constants/images";
 import { shopData } from "./shopData";
+import ChatBox from "./components/ChatBox/ChatBox";
+
 
 function App() {
   const [isSidedrawerOpen, setIsSidedrawerOpen] = useState(false);
@@ -43,7 +45,7 @@ function App() {
         {isSidedrawerOpen ? <Overlay toggler={drawerToggler} /> : null}
         {isLoginModal ? <LoginModal /> : null}
         {isLoginModal ? <Overlay toggler={toggleLoginModal} /> : null}
-
+        
         <div className="main">
           <Switch>
             <Route path="/category">
