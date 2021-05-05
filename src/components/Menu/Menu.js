@@ -1,9 +1,18 @@
 import React, { useEffect, Fragment } from "react";
 import "./Menu.css";
 import { Link } from "react-router-dom";
-import { auth, createUserProfileDocument,getCartData,setOrderHistory } from "../../firebase/firebase";
+import {
+  auth,
+  createUserProfileDocument,
+  getCartData,
+  setOrderHistory,
+} from "../../firebase/firebase";
 import { useSelector, useDispatch } from "react-redux";
-import { setAuthUser, deleteCartItems,initialiseCartItems } from "../../actions/index";
+import {
+  setAuthUser,
+  deleteCartItems,
+  initialiseCartItems,
+} from "../../actions/index";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscHeart } from "react-icons/vsc";
 import { HiOutlineUser } from "react-icons/hi";
@@ -21,7 +30,7 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
         const { uid, displayName, email } = userAuth;
         dispatch(setAuthUser({ displayName, email, uid }));
         const cart = await getCartData(uid);
-        if(cart){
+        if (cart) {
           dispatch(initialiseCartItems(cart.items));
         }
         await createUserProfileDocument(userAuth);
@@ -35,8 +44,25 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
   return (
     <div className="user-actions">
       {authUser ? (
+        <p className="logged-user">Hello {user.split(" ")[0]},</p>
+      ) : null}
+      <span className="user-action__item">
+        <p className="icon">
+          <VscHeart />
+        </p>
+        <p className="icon-tag">Favourites</p>
+      </span>
+      <Link to="/cart">
+        <span className="user-action__item cart-icon">
+          <p className="icon">
+            <AiOutlineShoppingCart />
+          </p>
+          <p className="icon-tag">{`Shopping Bag (${cartItems})`}</p>
+        </span>
+      </Link>
+
+      {authUser ? (
         <Fragment>
-          <p className="logged-user">Hello {user.split(" ")[0]},</p>
           <span
             className="user-action__item user-login"
             onClick={() => auth.signOut()}
@@ -58,24 +84,6 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
           <p className="icon-tag">Sign In</p>
         </span>
       )}
-      <span className="user-action__item">
-        <p className="icon">
-          <VscHeart />
-        </p>
-        <p className="icon-tag">Favourites</p>
-      </span>
-      <Link to="/cart">
-        <span className="user-action__item cart-icon">
-          <p className="icon">
-            <AiOutlineShoppingCart />
-          </p>
-          <p className="icon-tag">{`Shopping Bag (${cartItems})`}</p>
-        </span>
-      </Link>
-
-      {/* <span className="user-action__item select-language">
-        <FaGlobe /> English
-      </span> */}
     </div>
   );
 }

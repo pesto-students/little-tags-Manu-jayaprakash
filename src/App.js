@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Overlay from "./components/Overlay/Overlay";
 import ProductListingPage from "./components/ProductListingPage/ProductListingPage";
@@ -12,6 +12,7 @@ import Checkout from "./components/Checkout/Checkout";
 import Header from "./components/Header/Header";
 import OrderHistory from "./components/OrderHistory/OrderHistory";
 import HomePage from "./components/HomePage/HomePage";
+import CategoryMenu from "./components/CategoryMenu/CategoryMenu";
 import { images } from "./constants/images";
 import { shopData } from "./shopData";
 
@@ -35,6 +36,7 @@ function App() {
           toggleLoginModal={toggleLoginModal}
           setIsLoginModal={setIsLoginModal}
         />
+        <CategoryMenu />
         <SideDrawer
           drawerToggler={drawerToggler}
           isOpen={isSidedrawerOpen}
