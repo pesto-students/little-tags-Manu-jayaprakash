@@ -19,8 +19,13 @@ export default function ProductListingPage() {
       .split(" ")
       .map((item) => item.replace("-", " "));
     if (productsData.length > 1) {
-      const filteredData = productsData.filter(function ({ category }) {
-        return searchCategory.includes(category);
+      const filteredData = productsData.filter((product) => {
+        const {keywords} = product;
+        for(let key of keywords){
+          if(searchCategory.includes(key)){
+            return product;
+          }
+        }
       });
 
       if (radioFilterState === "low") {
