@@ -94,10 +94,17 @@
 }
 .product-size-quanity__wrapper{
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
 }
+
 .product-size,
 .product-quantity{
   margin-right: 10px;
+}
+.product-size{
+  display: flex;
+  align-items: baseline;
 }
 
 @media (max-width: 576px) {

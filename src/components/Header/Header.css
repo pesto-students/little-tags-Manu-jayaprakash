@@ -12,6 +12,13 @@
   z-index: 100;
   background-color: white;
 }
+.global-header img{
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  left: 5%;
+  top: 8%;
+}
 .global-logo {
   width: 150px;
   position: absolute;
@@ -28,6 +35,7 @@
   width: 100%;
   border-bottom: 1px solid #e1dbdb;
 }
+
 .global-menu ul {
   display: flex;
   list-style: none;
@@ -58,11 +66,11 @@
   width: 100%;
   height: 60px;
   align-items: center;
-  background-color: #006892;
+  background-color: #002060;
   color: white;
 }
 .search-box {
-  width: 500px;
+  width: 550px;
   margin-right: 30px;
 }
 .global-menu a {
@@ -97,6 +105,18 @@
 }
 
 @media (max-width: 576px) {
+  .global-header{
+    width: 100%;
+    background-color: #002060;
+  }
+  .global-header img{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    left: -20%;
+    top: 0%;
+    margin-top: 10px;
+  }
   .global-menu,
   .global-bar .user-actions {
     display: none;
@@ -108,6 +128,6 @@
     display: block;
   }
   .search-box {
-    margin: 0 10px;
+    margin: 0 30px;
   }
 }
