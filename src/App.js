@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Overlay from "./components/Overlay/Overlay";
 import ProductListingPage from "./components/ProductListingPage/ProductListingPage";

@@ -5,8 +5,10 @@
   justify-content: center;
   align-items: center;
   padding: 0;
-  height: 80vh;
+  height: 85vh;
   margin-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
 }
 .caraousal {
   display: flex;
@@ -15,7 +17,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  margin: 10px 0 2px 0;
 }
 .carousal-images {
   width: 100%;
@@ -86,9 +87,71 @@
 .dot:hover {
   background-color: #717171;
 }
+.shop-offer {
+  position: absolute;
+  height: 100%;
+  left: 5%;
+  top: 0%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+.offer-tag {
+  font-size: 30px;
+  font-weight: 800;
+  padding: 10px;
+}
+.offer-line {
+  font-size: 20px;
+  padding: 10px;
+}
+.offer-shop-now {
+  background-color:white;
+  color: black;
+  margin: 15px;
+  padding: 8px;
+  border-radius: 3px;
+  font-size: 25px;
+  font-weight: 600;
+  opacity: 1;
+}
+.offer-shop-now:hover {
+  cursor: pointer;
+  background-color: #f72585;
+}
+
 
 @media (max-width: 576px) {
   .caraousal-container {
     height: 40vh;
+  }
+  
+  .shop-offer {
+    position: absolute;
+    height: 100%;
+    left: 5%;
+    top: -20%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0.7;
+  }
+  .offer-tag {
+    font-size: 15px;
+    padding: 0px;
+  }
+  .offer-line {
+    font-size: 10px;
+    padding: 5px;
+  }
+  .offer-shop-now {
+    margin: 8px;
+    padding: 4px;
+    font-size: 15px;
   }
 }

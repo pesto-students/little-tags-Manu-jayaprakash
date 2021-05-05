@@ -10,7 +10,7 @@ function HomePage({ images, productsData, title }) {
     <div className="home-page">
       <Caraousal images={images} />
       <ShopNow />
-      <Categories />
+      {/*<Categories />*/}
       <ItemCard productsData={productsData} title="Trending Items" /> 
     </div>
   );

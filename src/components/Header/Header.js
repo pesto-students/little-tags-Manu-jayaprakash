@@ -1,5 +1,4 @@
 import React from "react";
-import slide1 from "../../images/B&B/Slide1.JPG";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import Menu from "../Menu/Menu";
