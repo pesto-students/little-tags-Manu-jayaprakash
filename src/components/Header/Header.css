@@ -12,6 +12,9 @@
   z-index: 100;
   background-color: white;
 }
+.global-header a{
+  text-decoration: none;
+}
 .global-logo {
   width: 90px;
   position: absolute;
@@ -22,7 +25,10 @@
 }
 .global-menu {
   width: 100%;
+  height: 60px;
   border-bottom: 1px solid #e1dbdb;
+  background-color: #eae0d5;
+  margin-top: -16px;
 }
 .global-menu ul {
   display: flex;
@@ -34,14 +40,14 @@
   margin: 0 50px;
   cursor: pointer;
   text-decoration: none;
-  color: black;
-
+  color: #0a0908;
+  font-weight: 500;
   display: flex;
   align-items: center;
 }
 .global-menu ul li:hover {
   text-decoration: underline;
-  text-decoration-color: #767171;
+  text-decoration-color: #0a0908;
   text-decoration-thickness: 1px;
   text-underline-offset: 0;
 }
@@ -54,8 +60,8 @@
   width: 100%;
   height: 60px;
   align-items: center;
-  background-color: #001849;
-  color: white;
+  background-color: #0a0908;
+  color: #eae0d5;
 }
 .search-box {
   width: 500px;
@@ -83,9 +89,12 @@
   font: normal 36px "Cookie", cursive;
   margin: 0;
 }
+
 .global-logo.logo-text .first-letter {
   /* color: white */
-  color: #e75480;
+  color: #c6ac8f;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 800;
 }
 .global-logo.logo-text .second-letter {
   color: #ffe500;

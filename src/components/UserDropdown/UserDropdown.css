@@ -1,5 +1,6 @@
 .user-dropdown__submenu {
   display: none;
+  color: #eae0d5;
 }
 
 .user-dropdown__menu-item:hover .user-dropdown__submenu {
@@ -32,11 +33,17 @@
 .user-dropdown__menu {
   line-height: 45px;
   font-size: 15px;
+  color: #c6ac8f;
+}
+.user-dropdown__menu a{
+  color: #c6ac8f;
+  
 }
 
 .user-dropdown__menu-item {
   display: inline-block;
   position: relative;
+  
 }
 .user-dropdown__menu-item:hover {
   background-color: transparent;
@@ -52,7 +59,7 @@
   position: absolute;
   width: 130px;
   border-radius: 5px;
-  background-color: #006892;
+  background-color: #22333b;
 }
 
 .user-dropdown__submenu-item:hover {

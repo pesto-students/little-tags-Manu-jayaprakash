@@ -4,11 +4,13 @@
   align-items: center;
   justify-content: center;
   color: black;
+  
 }
 .search__input {
   border: none;
   border-bottom: 1px solid black;
   color: #6d6d6d;
+  background-color: #eae0d5;
   font-size: 14px;
   padding: 5px 10px;
   width: 100%;

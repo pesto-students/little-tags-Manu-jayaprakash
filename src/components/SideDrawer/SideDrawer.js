@@ -59,6 +59,7 @@ export default function SideDrawer({ drawerToggler, isOpen, setIsLoginModal }) {
           <li onClick={() => auth.signOut()}>
             <FaUserAlt /> Logout
           </li>
+          
         ) : (
           <li onClick={handleLoginClick}>
             <FaUserAlt /> Login/SignUp
