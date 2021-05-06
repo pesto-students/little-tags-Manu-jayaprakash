@@ -6,10 +6,38 @@
   animation: fadeIn 0.3s;
   z-index: 999;
 }
+.modal-close {
+  background-color: #0a0908;
+  color: #eae0d5;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 1000;
+  right: 0%;
+  top: 0%;
+}
+.modal-close:hover {
+  cursor: pointer;
+}
+.modal-logo {
+  position: absolute;
+  font-size: 40px;
+  font-weight: 800;
+  color: #22333b;
+  left: 25%;
+  top: 10%;
+  font-family: "Dancing Script", cursive;
+  z-index: 1000;
+}
 .login-modal__card {
-  background-color: white;
+  background-color: #c6ac8f;
   min-width: 400px;
-  min-height: 400px;
+  min-height: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -24,10 +52,18 @@
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-.google-icon,.facebook-icon {
+.google-icon,
+.facebook-icon {
   position: absolute;
   margin-top: 11px;
   margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+.github-icon{
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 5px;
   width: 18px;
   height: 18px;
 }
@@ -41,6 +77,17 @@
   border-radius: 2px;
   background-color: white;
 }
+.github-icon-wrapper{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: black;
+}
+.github-icon-wrapper img{
+  height: 35px;
+  width: 35px;
+}
 .facebook-icon-wrapper {
   background-color: unset;
   border-right: #364e92 1px solid;
@@ -52,16 +99,29 @@
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  margin: 5px 0px;
+  margin-top: 40px;
 }
 .facebook-btn {
   width: 200px;
   height: 42px;
-  background-color: #4C69BA;
-  background-image: linear-gradient(#4C69BA, #3B55A0);
+  background-color: #4c69ba;
+  background-image: linear-gradient(#4c69ba, #3b55a0);
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  margin: 5px 0px;
+}
+.github-btn {
+  width: 200px;
+  height: 42px;
+  background-color: black;
+  background-image: linear-gradient(black, black);
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  margin: 5px 0px;
 }
 .google-btn:hover {
   box-shadow: 0 0 6px blue;

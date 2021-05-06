@@ -22,12 +22,17 @@
 .user-action__item p {
   margin: 0;
   padding: 0px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .icon {
   font-size: 20px;
+  color: #c6ac8f;
 }
 .icon-tag {
   font-size: 15px;
+  color: #c6ac8f;
 }
 
 .user-action__item a {

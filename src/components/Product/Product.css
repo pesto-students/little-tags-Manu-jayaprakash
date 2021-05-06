@@ -1,12 +1,14 @@
 .product-page {
   width: 100%;
   padding: 0;
+  background-color: #eae0d5;
 }
 .product-container {
   padding: 40px 60px;
   display: flex;
-  background-color: white;
+  /* background-color: white; */
   padding-bottom: 150px;
+  background-color: #f7f7ff;
 }
 
 .image-container {
