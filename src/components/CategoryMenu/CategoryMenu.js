@@ -11,14 +11,14 @@ export default function CategoryMenu() {
             src="https://rukminim1.flixcart.com/www/200/200/promos/30/04/2021/880e0970-97a8-4159-9c4f-e22e4d1a76ab.png?q=90"
             alt="category"
           />
-          <Link to="/category?type=men-clothing">Mens Fashion</Link>
+          <Link to="/category?type=men-clothing">Mens </Link>
         </li>
         <li>
           <img
             src="https://rukminim1.flixcart.com/www/200/200/promos/30/04/2021/880e0970-97a8-4159-9c4f-e22e4d1a76ab.png?q=90"
             alt="category"
           />
-          <Link to="/category?type=women-clothing">Womens Fashion</Link>
+          <Link to="/category?type=women-clothing">Womens </Link>
         </li>
         <li>
           <img

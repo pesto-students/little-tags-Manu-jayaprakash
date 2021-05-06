@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Fragment} from "react";
 import PropTypes from "prop-types";
 import "./SideDrawer.css";
 import { useHistory } from "react-router-dom";
@@ -36,7 +36,9 @@ export default function SideDrawer({ drawerToggler, isOpen, setIsLoginModal }) {
       <div className="sidedrawer__close" onClick={drawerToggler}>
         <FaWindowClose />
       </div>
-      {user ? <p className="sidedrawer__heading">Hello {user.split(' ')[0]},</p> : null}
+      {user ? (
+        <p className="sidedrawer__heading">Hello {user.split(" ")[0]},</p>
+      ) : null}
 
       <p className="sidedrawer__heading">Categories</p>
       <ul className="sidedrawer__items">
@@ -55,10 +57,16 @@ export default function SideDrawer({ drawerToggler, isOpen, setIsLoginModal }) {
         <li onClick={() => handleSideDrawerUserActions("cart")}>
           <FaShoppingCart /> My Cart
         </li>
+
         {user ? (
-          <li onClick={() => auth.signOut()}>
-            <FaUserAlt /> Logout
-          </li>
+          <Fragment>
+            <li onClick={() => handleSideDrawerUserActions("order-history")}>
+              <FaShoppingCart /> Order History
+            </li>
+            <li onClick={() => auth.signOut()}>
+              <FaUserAlt /> Logout
+            </li>
+          </Fragment>
         ) : (
           <li onClick={handleLoginClick}>
             <FaUserAlt /> Login/SignUp

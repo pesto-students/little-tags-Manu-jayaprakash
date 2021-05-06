@@ -13,6 +13,7 @@
   padding: 5px 10px;
   width: 100%;
   border-radius: 5px;
+  background-color: #eae0d5;
 }
 .search__input:focus {
   outline: none;

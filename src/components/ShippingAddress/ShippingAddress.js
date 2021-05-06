@@ -52,7 +52,7 @@ export default function ShippingAddress({ setIsAddress }) {
               name="firstName"
               value={userAddress.firstName}
               type="text"
-              placeholder="First name"
+              placeholder="First Name *"
               onChange={handleInputChange}
               required
             />
@@ -60,7 +60,7 @@ export default function ShippingAddress({ setIsAddress }) {
               name="lastName"
               value={userAddress.lastName}
               type="text"
-              placeholder="Last name"
+              placeholder="Last Name *"
               onChange={handleInputChange}
               required
             />
@@ -69,7 +69,7 @@ export default function ShippingAddress({ setIsAddress }) {
             name="address"
             value={userAddress.address}
             type="text"
-            placeholder="Address"
+            placeholder="Address *"
             onChange={handleInputChange}
             required
           />
@@ -84,7 +84,7 @@ export default function ShippingAddress({ setIsAddress }) {
             name="city"
             value={userAddress.city}
             type="text"
-            placeholder="City"
+            placeholder="City *"
             onChange={handleInputChange}
             required
           />
@@ -93,7 +93,7 @@ export default function ShippingAddress({ setIsAddress }) {
               name="country"
               value={userAddress.country}
               type="text"
-              placeholder="Country"
+              placeholder="Country *"
               onChange={handleInputChange}
               required
             />
@@ -101,7 +101,7 @@ export default function ShippingAddress({ setIsAddress }) {
               name="state"
               value={userAddress.state}
               type="text"
-              placeholder="State"
+              placeholder="State *"
               onChange={handleInputChange}
               required
             />
@@ -109,7 +109,7 @@ export default function ShippingAddress({ setIsAddress }) {
               name="pin"
               value={userAddress.pin}
               type="number"
-              placeholder="PIN code"
+              placeholder="PIN Code *"
               onChange={handleInputChange}
               required
             />
@@ -118,7 +118,7 @@ export default function ShippingAddress({ setIsAddress }) {
             name="phone"
             value={userAddress.phone}
             type="number"
-            placeholder="Phone"
+            placeholder="Phone *"
             onChange={handleInputChange}
             required
           />
