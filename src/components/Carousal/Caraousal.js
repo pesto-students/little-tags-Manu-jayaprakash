@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
 import "./Carousal.css";
+import { useHistory } from "react-router-dom";
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
   "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
   "https://images.unsplash.com/photo-1490132328392-e6ef54a90dda?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-  
 ];
 
 function Caraousal({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const history = useHistory();
 
   const prevSlide = () => {
     const lastIndex = images.length - 1;
@@ -34,22 +35,25 @@ function Caraousal({ images }) {
 
   let offerPercentage;
   let offerType;
-  if(currentIndex === 0){
+  if (currentIndex === 0) {
     offerPercentage = 50;
-    offerType = "Women";
-  }else if(currentIndex === 1){
-    offerPercentage = 30;
-    offerType = "Men";
-  }else{
-    offerPercentage = 25;
     offerType = "Latest";
+  } else if (currentIndex === 1) {
+    offerPercentage = 30;
+    offerType = "Women";
+  } else {
+    offerPercentage = 25;
+    offerType = "Men";
   }
+  const handleShopNow = () => {
+    history.push("/category?type=women-clothing");
+  };
 
   return (
     <div className="caraousal-container">
       <div className="caraousal">
         <span className="left-icon" onClick={prevSlide}>
-          <RiArrowDropLeftLine size={80}/>
+          <RiArrowDropLeftLine size={80} />
         </span>
         {images.map((image, index) => {
           return (
@@ -66,13 +70,18 @@ function Caraousal({ images }) {
           );
         })}
         <span className="right-icon" onClick={nextSlide}>
-          <RiArrowDropRightLine size={80}/>
+          <RiArrowDropRightLine size={80} />
         </span>
       </div>
-      <div className='shop-offer'>
-          <div className='offer-tag'>{`Upto ${offerPercentage}% OFF`}</div>
-          <div className='offer-line'>{`On recent ${offerType}'s Fashion`}</div>
-          <div className='offer-shop-now'>SHOP NOW</div>
+      <div className="shop-offer">
+        <div className="offer-tag">{`Upto ${offerPercentage}% OFF`}</div>
+        <div className="offer-line">{`On recent ${offerType}'s Fashion`}</div>
+        <div
+          className="offer-shop-now"
+          onClick={handleShopNow}
+        >
+          SHOP NOW
+        </div>
       </div>
     </div>
   );
