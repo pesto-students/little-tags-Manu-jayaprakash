@@ -1,6 +1,7 @@
 .cart {
   padding-top: 30px;
   display: flex;
+  min-height:300px
 }
 
 @media (max-width: 576px) {
