@@ -83,7 +83,7 @@ function Product({ productsData }) {
           <div className="product-price">{`Rs. ${product.price}`}</div>
 
           <div className="product-size-quanity__wrapper">
-            <span className="product-size">Size</span>
+            <span className="product-size">Size: &nbsp;&nbsp;
             <select
               className="size-selector"
               value={size}
@@ -95,7 +95,7 @@ function Product({ productsData }) {
               <option value="xl">XL</option>
               <option value="xxl">XXL</option>
             </select>
-
+            </span>
             <span className="quantity-modifier">
               <span className="product-quantity">Quantity</span>
               <button onClick={removeQuantityHandler}>-</button>

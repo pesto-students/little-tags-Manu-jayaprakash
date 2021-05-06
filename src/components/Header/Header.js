@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import SearchBox from "../SearchBox/SearchBox";
 import { MdReorder } from "react-icons/md";
+import logo from '../../images/logo.png'
 
 export default function Header({
   drawerToggler,
@@ -13,10 +14,11 @@ export default function Header({
   return (
     <div className="global-header ">
       <Link to="/">
-        <h3 className="global-logo logo-text">
+        {/*<h3 className="global-logo logo-text">
           <span className="first-letter">B</span> &
           <span className="second-letter"> B</span>
-        </h3>
+  </h3>*/}
+  <img src={logo} alt='logo' className='global-logo'/>
       </Link>
       <div className="global-bar">
         <div className="search-box">

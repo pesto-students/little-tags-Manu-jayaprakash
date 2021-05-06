@@ -5,7 +5,6 @@ import {
   auth,
   createUserProfileDocument,
   getCartData,
-  setOrderHistory,
 } from "../../firebase/firebase";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -16,6 +15,7 @@ import {
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { VscHeart } from "react-icons/vsc";
 import { HiOutlineUser } from "react-icons/hi";
+import UserDropdown from '../UserDropdown/UserDropdown'
 
 export default function Menu({ toggleLoginModal, setIsLoginModal }) {
   const authUser = useSelector((state) => state.authUserState.authUser);
@@ -43,9 +43,9 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
   }, [authUser]);
   return (
     <div className="user-actions">
-      {authUser ? (
+      {/*{authUser ? (
         <p className="logged-user">Hello {user.split(" ")[0]},</p>
-      ) : null}
+      ) : null}*/}
       <span className="user-action__item">
         <p className="icon">
           <VscHeart />
@@ -63,15 +63,7 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
 
       {authUser ? (
         <Fragment>
-          <span
-            className="user-action__item user-login"
-            onClick={() => auth.signOut()}
-          >
-            <p className="icon">
-              <HiOutlineUser />
-            </p>
-            <p className="icon-tag">Sign Out</p>
-          </span>
+        <UserDropdown userName={user.split(" ")[0] || ""}/>
         </Fragment>
       ) : (
         <span
@@ -84,6 +76,8 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
           <p className="icon-tag">Sign In</p>
         </span>
       )}
+      
+
     </div>
   );
 }

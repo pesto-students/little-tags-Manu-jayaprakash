@@ -3,14 +3,14 @@ import { useLocation } from "react-router-dom";
 import ItemCard from "../ItemCard/ItemCard";
 import ProductFilter from "../ProductFilter/ProductFilter";
 import "./ProductListingPage.css";
-import {shopData} from '../../shopData.js';
+import { shopData } from "../../shopData.js";
 
 export default function ProductListingPage() {
   const [productsData] = useState(shopData);
   const [filteredData, setFilteredData] = useState([]);
   const [radioFilterState, setRadioFilterState] = useState("");
   const { search } = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const params = new URLSearchParams(search);
@@ -19,8 +19,15 @@ export default function ProductListingPage() {
       .split(" ")
       .map((item) => item.replace("-", " "));
     if (productsData.length > 1) {
-      const filteredData = productsData.filter(function ({ category }) {
-        return searchCategory.includes(category);
+      // const filteredData = productsData.filter(function ({ category }) {
+      //   return searchCategory.includes(category);
+      const filteredData = productsData.filter((product) => {
+        const { keywords } = product;
+        for (let key of keywords) {
+          if (searchCategory.includes(key)) {
+            return product;
+          }
+        }
       });
 
       if (radioFilterState === "low") {
@@ -33,7 +40,6 @@ export default function ProductListingPage() {
         });
       }
       setFilteredData(filteredData);
-
     }
   }, [search, productsData, radioFilterState]);
 
