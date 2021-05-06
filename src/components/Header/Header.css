@@ -25,7 +25,10 @@
 }
 .global-menu {
   width: 100%;
+  height: 60px;
   border-bottom: 1px solid #e1dbdb;
+  background-color: #eae0d5;
+  margin-top: -16px;
 }
 .global-menu ul {
   display: flex;
