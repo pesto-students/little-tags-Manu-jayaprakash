@@ -1,0 +1,137 @@
+.product-page {
+  width: 100%;
+  padding: 0;
+  background-color: #eae0d5;
+}
+.product-container {
+  padding: 40px 60px;
+  display: flex;
+  /* background-color: white; */
+  padding-bottom: 150px;
+  background-color: #f7f7ff;
+}
+
+.image-container {
+  width: 50%;
+}
+.image-container img {
+  width: 100%;
+  height: 100vh;
+}
+
+.product-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 45%;
+  padding: 0 10px 0 30px;
+}
+.product-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+.product-price {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.product-buttons {
+  padding: 50px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.add-to-cart {
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: white;
+  border: 2px solid black;
+  width: 49%;
+}
+.buy-now {
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+  border: none;
+  width: 49%;
+}
+.add-to-cart:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+}
+.buy-now:hover {
+  cursor: pointer;
+  background-color: grey;
+  opacity: 0.5;
+  color: black;
+  border: 2px solid black;
+}
+.add-to-wishlist {
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: white;
+  border: 2px solid black;
+  opacity: 0.8;
+}
+.add-to-wishlist:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  opacity: 0.5;
+}
+.product-description-header {
+  font-size: 20px;
+  color: brown;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.product-size-quanity__wrapper{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.product-size,
+.product-quantity{
+  margin-right: 10px;
+}
+.product-size{
+  display: flex;
+  align-items: baseline;
+}
+
+@media (max-width: 576px) {
+  .product-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    padding: 20px 0px;
+  }
+  .image-container {
+    width: 100%;
+  }
+  .image-container img {
+    height: auto;
+  }
+  .product-details-container {
+    width: 95%;
+    padding: 0 10px 0 10px;
+  }
+  .product-buttons {
+    width: 95%;
+  }
+}

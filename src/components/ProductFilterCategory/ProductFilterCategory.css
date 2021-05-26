@@ -1,0 +1,14 @@
+.product-filter__category label,
+.product-filter__category input {
+  cursor: pointer;
+  padding-top: 5px;
+  display: inline-block;
+}
+.product-filter__category {
+  border-bottom: 1px solid #d3caca;
+  padding: 5px 0px;
+}
+.product-filter__title {
+  font-size: 20px;
+  padding-bottom: 5px;
+}

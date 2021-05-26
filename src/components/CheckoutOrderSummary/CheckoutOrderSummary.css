@@ -1,0 +1,62 @@
+.checkout-summary__wrapper {
+  padding: 20px;
+  width: 35%;
+  float: right;
+}
+.checkout-summary__item-image img {
+  width: 3.5em;
+  height: 100%;
+}
+.checkout-summary__items-wrapper {
+  border-bottom: 1px solid #959292;
+  padding-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.checkout-summary__item {
+  display: flex;
+  margin-top: 5px;
+}
+.checkout-summary__item-quantity {
+  text-align: center;
+}
+.checkout-summary__item-name {
+  display: inline-block;
+  max-width: 90%;
+  margin: 0 10px;
+  min-height: 50px;
+}
+.checkout-summary__item-content {
+  width: 70%;
+}
+.checkout-summary__item-price {
+  width: 20%;
+  text-align: right;
+}
+.checkout-summary__item-price svg,
+.checkout-summary__subtotal svg,
+.checkout-summary__shipping svg,
+.checkout-summary__tax svg,
+.checkout-summary__total svg {
+  vertical-align: bottom;
+}
+.checkout-summary__subtotal,
+.checkout-summary__shipping,
+.checkout-summary__tax,
+.checkout-summary__total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.checkout-summary__subtotal-container {
+  border-bottom: 1px solid #959292;
+  padding: 20px 0px;
+}
+@media (max-width: 576px) {
+  .checkout-summary__wrapper {
+    width: unset;
+  }
+  .checkout-summary__item-price {
+    width: 25%;
+  }
+}
