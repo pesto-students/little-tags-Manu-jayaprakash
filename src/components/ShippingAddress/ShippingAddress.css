@@ -1,0 +1,59 @@
+.shipping-address__wrapper {
+  width: 50%;
+  padding: 20px;
+  float: left;
+}
+.shipping-address__container {
+  display: table;
+  margin: 0 auto;
+}
+.shipping-address__form input {
+  display: block;
+  border: 1px transparent solid;
+  background-clip: padding-box;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  word-break: normal;
+  line-height: inherit;
+  width: 100%;
+  margin-top: 10px;
+  border-color: #b6b4b4;
+}
+.shipping-address__name,
+.shipping-address__location {
+  display: flex;
+  justify-content: space-between;
+}
+.shipping-address__name input {
+  width: 48%;
+}
+.shipping-address__location input {
+  width: 32%;
+}
+.shipping-address__btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #fc5c9c;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  padding: 15px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+@media (max-width : 576px) {
+  .shipping-address__wrapper {
+    width: unset;
+  }
+}

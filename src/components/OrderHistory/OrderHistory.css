@@ -1,0 +1,61 @@
+.order-history__wrapper {
+  width: 50%;
+  margin: 0 auto;
+  min-height: 300px;
+}
+.order-history__container {
+  border: 1px #ddd solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.order-history__header {
+  background-color: #e9e9e9;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.order-history__header p {
+  margin: 5px 0px;
+}
+.order-history__item-image img {
+  width: 70px;
+}
+.order-history__item-info {
+  font-weight: 300;
+  color: #353030;
+  padding-left: 20px;
+}
+.order-history__item-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.order-history__item {
+  display: flex;
+  padding: 5px 20px;
+  border-bottom: 1px solid #efecec;
+  cursor: pointer;
+}
+.order-history__item:last-child {
+  border: none;
+}
+.order-history__item-title {
+  margin: 0;
+  font-size: 18px;
+}
+.order-history__header-item.order-id {
+  text-align: right;
+}
+
+@media (max-width: 576px) {
+  .order-history__wrapper {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .order-history__header-item {
+    flex: 1 1 0px;
+  }
+}
