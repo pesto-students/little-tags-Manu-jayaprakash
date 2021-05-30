@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { MdLocationOn,MdCall,MdEmail } from "react-icons/md";
+import { MdLocationOn, MdCall, MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
@@ -21,19 +21,17 @@ export default function Footer() {
 
       <div className="footer-center">
         <div>
-          <MdLocationOn/>
-          <p>
-            <span>Lorem, ipsum dolor.</span> India
-          </p>
+          <MdLocationOn />
+          <p>India</p>
         </div>
 
         <div>
-          <MdCall/>
-          <p>+000 000000</p>
+          <MdCall />
+          <p>+91 8547213535</p>
         </div>
 
         <div>
-          <MdEmail/>
+          <MdEmail />
           <p>
             <a href="mailto:townmate-dev@gmail.com">b_and_b-dev@gmail.com</a>
           </p>
@@ -43,8 +41,9 @@ export default function Footer() {
       <div className="footer-right">
         <p className="footer-company-about">
           <span>About the company</span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          voluptate molestiae deleniti iusto adipisci corporis?
+          BinBeas brings you a daily fashion fix incorporating everything that
+          you love, all at one place. Sign up on BinBeas today and start
+          organising your fashion feed, just the way you want to.
         </p>
       </div>
     </footer>

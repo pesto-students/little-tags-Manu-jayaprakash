@@ -40,12 +40,11 @@ export default function ItemCard({ productsData, title }) {
               </del>
             </div>
             <div className="card__user-actions">
-              <div
+              {/*<div
                 className="cart__add-button"
-                // onClick={() => handleCartClick(id, title, price, image,description)}
               >
                 <VscHeart />
-              </div>
+              </div>*/}
               <div
                 className="cart__add-button"
                 onClick={() =>

@@ -46,12 +46,12 @@ export default function Menu({ toggleLoginModal, setIsLoginModal }) {
       {/*{authUser ? (
         <p className="logged-user">Hello {user.split(" ")[0]},</p>
       ) : null}*/}
-      <span className="user-action__item">
+      {/*<span className="user-action__item">
         <p className="icon">
           <VscHeart />
         </p>
         <p className="icon-tag">Favourites</p>
-      </span>
+      </span>*/}
       <Link to="/cart">
         <span className="user-action__item cart-icon">
           <p className="icon">

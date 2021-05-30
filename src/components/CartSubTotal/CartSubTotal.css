@@ -8,6 +8,7 @@
   border-radius: 10px;
   min-height: 120px;
   border: 1px solid #e3e3e3;
+  max-height: 120px;
 }
 .subtotal__text {
   font-size: 18px;
