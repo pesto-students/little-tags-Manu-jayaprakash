@@ -1,16 +1,18 @@
 .global-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  align-items: flex-end;
   justify-content: center;
   position: relative;
   /* padding: 20px 0px; */
   text-shadow: 0.3px 0.3px grey;
+  background-color: #0a0908;
 
   position: sticky;
   top: 0px;
   z-index: 100;
-  background-color: white;
+  /* background-color: white; */
 }
 .global-header a{
   text-decoration: none;
@@ -58,8 +60,10 @@
 }
 .global-bar {
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  /* justify-content: flex-end; */
+  justify-content: space-between;
+  /* width: 100%; */
+  width: 70%;
   height: 60px;
   align-items: center;
   /* background-color: #001849;
@@ -68,6 +72,7 @@
   color: #eae0d5;
 }
 .search-box {
+  /* width: 500px; */
   width: 500px;
   margin-right: 30px;
 }
@@ -118,5 +123,12 @@
   }
   .search-box {
     margin: 0 10px;
+  }
+  .global-bar {
+    width: 100%;
+  }
+  .global-header{
+    align-items: center;
+    background-color: white;
   }
 }
